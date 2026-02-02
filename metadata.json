@@ -1,0 +1,7 @@
+{
+  "name": "Vakwerk Bouw & Renovatie",
+  "description": "Een professionele website voor een gespecialiseerde eenmanszaak in de bouw, inclusief een interactieve offerte-tool en modern ontwerp.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
       <section className="bg-gray-50 py-32 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[#b88e4b] font-black uppercase tracking-[0.4em] text-[10px] mb-6 block">Klaar voor de start</span>
-          <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none">Contact</h1>
+          <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none text-gray-900">Contact</h1>
           <p className="text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
             Heeft u vragen over onze diensten of wilt u direct een project bespreken? Wij staan voor u klaar.
           </p>

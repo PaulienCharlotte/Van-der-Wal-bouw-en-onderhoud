@@ -4,8 +4,24 @@ import React from 'react';
 const About: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
-      {/* Redesigned Content Section - Matching Screenshot 2 */}
-      <section className="py-32 sm:py-48 pt-40 md:pt-56">
+      {/* Hero Header Section */}
+      <section className="bg-[#0a0a0a] py-32 sm:py-48 pt-40 md:pt-56 relative overflow-hidden">
+        {/* Background accent */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#111] opacity-50 skew-x-[-20deg] translate-x-1/4"></div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10 text-center">
+          <span className="text-[#b88e4b] font-black uppercase tracking-[0.4em] text-[10px] sm:text-xs mb-6 block animate-fadeIn">Van der Wal Bouw</span>
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-none animate-slideUp">
+            Over Ons
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed animate-slideUp" style={{ animationDelay: '0.1s' }}>
+            Vakmanschap, heldere communicatie en passie voor het echte bouwwerk.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content Section */}
+      <section className="py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
 

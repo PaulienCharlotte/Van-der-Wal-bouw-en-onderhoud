@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initialize AI only when needed to prevent crash on startup if key is missing
+const API_KEY = process.env.API_KEY || process.env.GEMINI_API_KEY;
 
 const QuoteTool: React.FC = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const QuoteTool: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [aiSummary, setAiSummary] = useState<string | null>(null);
   const [countdown, setCountdown] = useState(10);
-  
+
   const [formData, setFormData] = useState({
     projectType: 'Kozijn',
     style: 'Modern / Strak',
@@ -57,8 +58,15 @@ const QuoteTool: React.FC = () => {
       Naam: ${formData.name}
       Toon: Professioneel, kundig en betrouwbaar.`;
 
+      if (!API_KEY) {
+        console.error("API Key ontbreekt. Configureer GEMINI_API_KEY in Netlify.");
+        throw new Error("API Key ontbreekt");
+      }
+
+      const ai = new GoogleGenAI({ apiKey: API_KEY });
+
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-1.5-flash',
         contents: prompt
       });
 
@@ -80,7 +88,7 @@ const QuoteTool: React.FC = () => {
   const prevStep = () => setStep(prev => prev - 1);
 
   const renderStep = () => {
-    switch(step) {
+    switch (step) {
       case 1:
         return (
           <div className="space-y-6 animate-fadeIn">
@@ -209,8 +217,8 @@ const QuoteTool: React.FC = () => {
                 <div className="bg-gray-50 p-8 rounded-[2rem] mb-10 text-gray-700 font-light text-base sm:text-lg leading-relaxed border border-gray-100 shadow-inner italic">
                   "{aiSummary}"
                 </div>
-                <button 
-                  onClick={() => navigate('/')} 
+                <button
+                  onClick={() => navigate('/')}
                   className="bg-gray-900 text-white px-10 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-gold transition-all shadow-lg"
                 >
                   TERUG NAAR HOME
@@ -237,8 +245,8 @@ const QuoteTool: React.FC = () => {
         <div className="bg-white rounded-[2rem] sm:rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100 relative">
           {step < 5 && (
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gray-50">
-              <div 
-                className="bg-gold h-full transition-all duration-700 ease-out" 
+              <div
+                className="bg-gold h-full transition-all duration-700 ease-out"
                 style={{ width: `${(step / 4) * 100}%` }}
               ></div>
             </div>
@@ -246,18 +254,18 @@ const QuoteTool: React.FC = () => {
 
           <div className="p-8 sm:p-14">
             {renderStep()}
-            
+
             {step < 5 && (
               <div className="flex justify-between items-center mt-10 sm:mt-14 pt-8 border-t border-gray-50">
-                <button 
-                  onClick={prevStep} 
-                  disabled={step === 1} 
+                <button
+                  onClick={prevStep}
+                  disabled={step === 1}
                   className={`font-black uppercase tracking-widest text-[10px] transition-opacity ${step === 1 ? 'opacity-0 pointer-events-none' : 'text-gray-400 hover:text-gray-900'}`}
                 >
                   <i className="fas fa-chevron-left mr-2"></i>Vorige
                 </button>
-                <button 
-                  onClick={nextStep} 
+                <button
+                  onClick={nextStep}
                   className="bg-gray-900 text-white px-8 sm:px-10 py-4 sm:py-4.5 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-gold transition-all shadow-xl flex items-center gap-2"
                 >
                   <span>{step === 4 ? 'AANVRAAG VERZENDEN' : 'VOLGENDE'}</span>
@@ -267,7 +275,7 @@ const QuoteTool: React.FC = () => {
             )}
           </div>
         </div>
-        
+
         {step < 5 && (
           <p className="text-center mt-8 text-gray-400 font-bold uppercase tracking-[0.1em] text-[8px]">
             STAP {step} VAN 4 — VAN DER WAL BOUW EN ONDERHOUD

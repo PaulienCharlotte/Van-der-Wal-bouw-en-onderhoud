@@ -107,6 +107,16 @@
 </head>
 <body class="bg-[#0a0a0a]">
     <div id="root"></div>
+
+    <!-- Netlify Forms detectie (verborgen) -->
+    <form name="kozijn-aanvraag" netlify netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input name="naam" />
+      <input name="email" />
+      <input name="telefoon" />
+      <textarea name="opmerkingen"></textarea>
+      <textarea name="kozijnen"></textarea>
+    </form>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>

@@ -47,23 +47,23 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16 grid-container-hamer">
             {[
-              { title: 'DAKRENOVATIE', text: 'Herstel van lekkages, vervangen van folies en pannen, en isolatie voor een waterdicht resultaat.' },
-              { title: 'RUWBOUW & AANBOUW', text: 'Constructies van metal-stud tot houtskeletbouw, inclusief schuimbeton en funderingen.' },
-              { title: 'VLOEREN & CV', text: 'Invrezen van vloerverwarming, gieten van anhydriet en vloeibare zandcementvloeren.' },
-              { title: 'BADKAMERS', text: 'Complete badkamerrenovaties, inclusief herindeling van ruimtes en hoogwaardige afwerking.' }
+              { title: 'ONDERHOUD & RENOVATIE', text: 'Vakkundig onderhoud en complete renovaties van uw woning of bedrijfspand. Wij zorgen voor een duurzaam en hoogwaardig resultaat, van dak tot fundering.' },
+              { title: 'VERBOUW', text: 'Van kleine aanpassingen tot grote verbouwingen en aanbouwen. Wij realiseren uw woonwensen met oog voor detail, kwaliteit en een strakke afwerking.' },
+              { title: 'KUNSTSTOFKOZIJNEN', text: 'Plaatsen van nieuwe, hoogwaardig isolerende kunststof kozijnen en deuren. Voor een vernieuwde uitstraling, optimaal wooncomfort en lagere energiekosten.' },
+              { title: 'AARDBEVINGSHERSTEL', text: 'Vakkundig herstel van bevingsschade en preventieve versterking van uw pand. Wij zorgen voor een veilig en duurzaam resultaat.' }
             ].map((item, i) => (
-              <div key={i} className="group relative">
+              <div key={i} className="group relative h-full">
                 <div className="absolute -top-14 -right-6 opacity-0 group-hover:opacity-100 group-hover:hammer-strike transition-opacity pointer-events-none z-[30]">
                   <i className="fas fa-hammer text-[#e09d37] text-5xl transform -scale-x-100 drop-shadow-2xl"></i>
                 </div>
 
-                <Link to="/diensten" className="block bg-[#111111] p-12 flex flex-col min-h-[480px] justify-between shadow-xl rounded-xl border border-white/5 transition-all duration-400 hover:translate-y-[-10px] hover:bg-[#161616] hover:border-[#e09d37]/40 card-impact relative z-10 overflow-hidden">
+                <Link to="/diensten" className="block bg-[#111111] p-8 flex flex-col h-full min-h-[460px] justify-between shadow-xl rounded-xl border border-white/5 transition-all duration-400 hover:translate-y-[-10px] hover:bg-[#161616] hover:border-[#e09d37]/40 card-impact relative z-10 overflow-hidden">
                   <div className="relative z-10">
-                    <h3 className="text-[#e09d37] text-2xl font-black mb-8 uppercase tracking-tight leading-tight group-hover:text-white transition-colors">{item.title}</h3>
-                    <p className="text-gray-300 text-lg leading-[1.6] font-normal group-hover:text-white transition-colors">{item.text}</p>
+                    <h3 className="text-[#e09d37] text-lg font-black mb-6 uppercase leading-tight break-words group-hover:text-white transition-colors">{item.title}</h3>
+                    <p className="text-gray-300 text-base leading-[1.7] font-normal group-hover:text-white transition-colors">{item.text}</p>
                   </div>
 
-                  <div className="flex items-center gap-4 relative z-10">
+                  <div className="flex items-center gap-4 relative z-10 mt-8">
                     <div className="w-10 h-1 bg-[#e09d37] rounded-full"></div>
                     <span className="text-[10px] font-black text-[#e09d37] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">Bekijk Dienst</span>
                   </div>
@@ -81,9 +81,9 @@ const Home: React.FC = () => {
             {/* Linkerkant: De Afbeelding (Silhouette stijl) */}
             <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-[700px]">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=90&w=1200"
-                alt="Vakman in silhouet aan het werk"
-                className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] brightness-[0.7] contrast-[1.2]"
+                src="/homepage-dienstverlening.png"
+                alt="Van der Wal aan het werk"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0d0d0d]/10 to-[#0d0d0d] hidden lg:block"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent lg:hidden"></div>
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
             {/* Rechterkant: De Tekst */}
             <div className="w-full lg:w-1/2 p-12 md:p-24 flex flex-col justify-center">
               <span className="text-[#e09d37] font-black uppercase tracking-[0.4em] text-[12px] mb-10 block">PROJECT IN FOCUS</span>
-              <h2 className="text-4xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-10">
+              <h2 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-10">
                 VAN RUWBOUW <br />
                 <span className="text-[#e09d37]">TOT AFWERKING</span>
               </h2>

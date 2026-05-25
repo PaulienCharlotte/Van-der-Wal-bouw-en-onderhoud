@@ -4,40 +4,28 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: "Dakrenovatie & Herstel",
-    description: "Volledig strippen tot dakbeschot, vervangen van folies en rotte delen. Wij garanderen een waterdicht resultaat onder de pannen.",
+    title: "Onderhoud & Renovatie",
+    description: "Vakkundig onderhoud en complete renovaties van uw woning of bedrijfspand. Wij zorgen voor een duurzaam en hoogwaardig resultaat, van dak tot fundering.",
     icon: "fa-hammer",
-    image: "/construction-hammer-indoors-still-life.jpg"
-  },
-  {
-    title: "Aanbouw & Ruwbouw",
-    description: "Van kapschuren tot woonruimte uitbreidingen. Inclusief voorbereiding elektra en bekleden van wanden.",
-    icon: "fa-trowel-bricks",
     image: "/worker-is-cutting-wires-with-lineman-s-pliers.jpg"
   },
   {
-    title: "Vloeren & Verwarming",
-    description: "Invrezen van vloerverwarming en storten van anhydriet of vloeibare zandcementvloeren voor een perfecte basis.",
-    icon: "fa-temperature-arrow-up",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Schuimbeton Storten",
-    description: "Isolerende en lichtgewicht fundering in samenwerking met specialisten, ideaal voor renovaties van boerderijen en woningen.",
-    icon: "fa-truck-moving",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Badkamer Totaal",
-    description: "Herindeling van kamers, plaatsen van wanden en sanitair. Wij ontzorgen van sloop tot het eerste tegelwerk.",
-    icon: "fa-bath",
-    image: "/room-interior-renovation-indoor-paint.jpg"
-  },
-  {
-    title: "Kozijn & Deuren",
-    description: "Plaatsen van nieuwe deurkozijnen, deuren en kunststof kozijnen voor een frisse uitstraling en optimale isolatie.",
-    icon: "fa-door-open",
+    title: "Verbouw",
+    description: "Van kleine aanpassingen tot grote verbouwingen en aanbouwen. Wij realiseren uw woonwensen met oog voor detail, kwaliteit en een strakke afwerking.",
+    icon: "fa-trowel-bricks",
     image: "/man-working-factory.jpg"
+  },
+  {
+    title: "Kunststofkozijnen",
+    description: "Plaatsen van nieuwe, hoogwaardig isolerende kunststof kozijnen en deuren. Voor een vernieuwde uitstraling, optimaal wooncomfort en lagere energiekosten.",
+    icon: "fa-door-open",
+    image: "/kunsttofkozijn-diensten.png"
+  },
+  {
+    title: "Aardbevingsherstel",
+    description: "Vakkundig herstel van bevingsschade en preventieve versterking van uw woning of bedrijfspand. Wij zorgen voor een veilig, duurzaam en toekomstbestendig resultaat.",
+    icon: "fa-helmet-safety",
+    image: "/bevingschade-vlag.png"
   }
 ];
 
@@ -52,7 +40,7 @@ const Services: React.FC = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {services.map((service, index) => (
             <div key={index} className="bg-[#111111] flex flex-col h-full rounded-xl overflow-hidden group shadow-2xl border border-white/5 transition-all duration-500 hover:border-[#e09d37]/30">
               <div className="h-80 overflow-hidden relative">

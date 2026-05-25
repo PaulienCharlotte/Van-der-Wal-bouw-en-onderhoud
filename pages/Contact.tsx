@@ -53,45 +53,22 @@ const Contact: React.FC = () => {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            <div className="lg:col-span-1 space-y-12">
-              <div>
-                <h3 className="text-xs font-black mb-6 text-[#b88e4b] uppercase tracking-[0.2em]">Contactgegevens</h3>
-                <div className="space-y-6 mt-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center text-gray-900 shadow-sm border border-gray-100">
-                      <i className="fas fa-phone-alt"></i>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Telefoon</p>
-                      <p className="text-lg font-bold text-gray-900">06 48 32 47 29</p>
-                    </div>
+            <div className="lg:col-span-1 space-y-8">
+              {[
+                { icon: 'fa-phone-alt', label: 'Telefoon', value: '06 48 32 47 29' },
+                { icon: 'fa-envelope', label: 'Email', value: 'info@vdwalbouw.nl' },
+                { icon: 'fa-map-marker-alt', label: 'Locatie', value: 'Jonkersvaart 97\n9354 TN, Zevenhuizen' },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-5">
+                  <div className="w-12 h-12 shrink-0 bg-[#e09d37]/10 rounded-xl flex items-center justify-center text-[#e09d37]">
+                    <i className={`fas ${item.icon}`}></i>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center text-gray-900 shadow-sm border border-gray-100">
-                      <i className="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Email</p>
-                      <p className="text-lg font-bold text-gray-900">info@vdwalbouw.nl</p>
-                    </div>
+                  <div>
+                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{item.label}</p>
+                    <p className="text-sm font-bold text-gray-900 leading-snug whitespace-pre-line">{item.value}</p>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="text-xs font-black mb-6 text-[#b88e4b] uppercase tracking-[0.2em]">Locatie</h3>
-                <div className="space-y-6 mt-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center text-gray-900 shadow-sm border border-gray-100">
-                      <i className="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Werkplaats</p>
-                      <p className="text-lg font-bold text-gray-900 leading-relaxed">Jonkersvaart 97<br />9354 TN, Zevenhuizen</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="lg:col-span-2 bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 border border-gray-50">
@@ -105,12 +82,12 @@ const Contact: React.FC = () => {
                 <form name="contact-aanvraag" onSubmit={handleSubmit} className="space-y-6">
                   <input type="hidden" name="form-name" value="contact-aanvraag" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="naam" required placeholder="Uw Naam" value={formState.name} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] font-bold" />
-                    <input type="email" name="email" required placeholder="E-mail" value={formState.email} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] font-bold" />
+                    <input type="text" name="naam" required placeholder="Uw Naam" value={formState.name} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 font-medium" />
+                    <input type="email" name="email" required placeholder="E-mail" value={formState.email} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 font-medium" />
                   </div>
-                  <textarea name="bericht" required rows={5} placeholder="Uw bericht..." value={formState.message} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] resize-none font-light"></textarea>
+                  <textarea name="bericht" required rows={6} placeholder="Uw bericht..." value={formState.message} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 resize-none font-normal"></textarea>
                   {error && <p className="text-red-600 text-sm">{error}</p>}
-                  <button type="submit" disabled={sending} className="w-full md:w-auto bg-gray-900 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#b88e4b] transition-all shadow-xl disabled:opacity-60">
+                  <button type="submit" disabled={sending} className="w-full md:w-auto bg-[#e09d37] text-black px-12 py-5 rounded-sm font-black uppercase tracking-widest text-[11px] hover:bg-black hover:text-[#e09d37] transition-all shadow-lg disabled:opacity-60">
                     {sending ? 'Verzenden...' : 'Verzenden'}
                   </button>
                 </form>

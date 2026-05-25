@@ -16,7 +16,7 @@ const services = [
     title: "Onderhoud & Renovatie",
     description: "Vakkundig onderhoud en complete renovaties van uw woning of bedrijfspand. Wij zorgen voor een duurzaam en hoogwaardig resultaat, van dak tot fundering.",
     icon: "fa-hammer",
-    image: "/worker-is-cutting-wires-with-lineman-s-pliers.jpg",
+    image: "/bouw-renovatie-diensten.png",
     ctaLabel: "Neem contact op",
     ctaLink: "/contact",
     ctaGold: false

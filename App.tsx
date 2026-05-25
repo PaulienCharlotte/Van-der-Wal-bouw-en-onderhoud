@@ -162,7 +162,7 @@ const Footer: React.FC = () => (
           <ul className="space-y-4 text-gray-300 text-xs">
             <li className="flex items-center gap-3"><i className="fas fa-map-marker-alt text-[#e09d37] w-4"></i> Jonkersvaart 97, 9354 TN Zevenhuizen</li>
             <li className="text-white font-bold text-base flex items-center gap-3"><i className="fas fa-phone-alt text-[#e09d37] w-4"></i> 06 48 32 47 29</li>
-            <li className="flex items-center gap-3"><i className="fas fa-envelope text-[#e09d37] w-4"></i> info@jvanderwalbouwenonderhoud.nl</li>
+            <li className="flex items-center gap-3"><i className="fas fa-envelope text-[#e09d37] w-4"></i> info@vdwalbouw.nl</li>
           </ul>
         </div>
         <div>

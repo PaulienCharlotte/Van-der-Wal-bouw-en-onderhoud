@@ -5,16 +5,37 @@ const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    phone: '',
-    subject: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setSending(true);
+    setError('');
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact-aanvraag',
+          'naam': formState.name,
+          'email': formState.email,
+          'bericht': formState.message,
+        }).toString(),
+      });
+      setSubmitted(true);
+    } catch {
+      setError('Er ging iets mis. Probeer het opnieuw of mail direct naar info@vdwalbouw.nl.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -51,7 +72,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Email</p>
-                      <p className="text-lg font-bold text-gray-900">info@jvanderwalbouwenonderhoud.nl</p>
+                      <p className="text-lg font-bold text-gray-900">info@vdwalbouw.nl</p>
                     </div>
                   </div>
                 </div>
@@ -76,18 +97,22 @@ const Contact: React.FC = () => {
             <div className="lg:col-span-2 bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 border border-gray-50">
               <h3 className="text-2xl font-black mb-10 uppercase tracking-tight italic">Stuur een Bericht</h3>
               {submitted ? (
-                <div className="bg-green-50 text-green-700 p-8 rounded-2xl animate-fadeIn border border-green-100">
+                <div className="bg-green-50 text-green-700 p-8 rounded-2xl border border-green-100">
                   <div className="flex items-center gap-3 mb-2"><i className="fas fa-check-circle text-xl"></i><span className="font-bold">Bericht Verzonden!</span></div>
                   <p className="text-sm">Bedankt. Wij nemen zo spoedig mogelijk contact met u op.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form name="contact-aanvraag" onSubmit={handleSubmit} className="space-y-6">
+                  <input type="hidden" name="form-name" value="contact-aanvraag" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" required placeholder="Uw Naam" className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] font-bold" />
-                    <input type="email" required placeholder="E-mail" className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] font-bold" />
+                    <input type="text" name="naam" required placeholder="Uw Naam" value={formState.name} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] font-bold" />
+                    <input type="email" name="email" required placeholder="E-mail" value={formState.email} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] font-bold" />
                   </div>
-                  <textarea required rows={5} placeholder="Uw bericht..." className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] resize-none font-light"></textarea>
-                  <button type="submit" className="w-full md:w-auto bg-gray-900 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#b88e4b] transition-all shadow-xl">Verzenden</button>
+                  <textarea name="bericht" required rows={5} placeholder="Uw bericht..." value={formState.message} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#b88e4b] resize-none font-light"></textarea>
+                  {error && <p className="text-red-600 text-sm">{error}</p>}
+                  <button type="submit" disabled={sending} className="w-full md:w-auto bg-gray-900 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#b88e4b] transition-all shadow-xl disabled:opacity-60">
+                    {sending ? 'Verzenden...' : 'Verzenden'}
+                  </button>
                 </form>
               )}
             </div>

@@ -4,28 +4,40 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
+    title: "Kunststofkozijnen",
+    description: "Plaatsen van nieuwe, hoogwaardig isolerende kunststof kozijnen en deuren. Voor een vernieuwde uitstraling, optimaal wooncomfort en lagere energiekosten.",
+    icon: "fa-door-open",
+    image: "/kunsttofkozijn-diensten.png",
+    ctaLabel: "Vraag offerte aan",
+    ctaLink: "/offerte",
+    ctaGold: true
+  },
+  {
     title: "Onderhoud & Renovatie",
     description: "Vakkundig onderhoud en complete renovaties van uw woning of bedrijfspand. Wij zorgen voor een duurzaam en hoogwaardig resultaat, van dak tot fundering.",
     icon: "fa-hammer",
-    image: "/worker-is-cutting-wires-with-lineman-s-pliers.jpg"
+    image: "/worker-is-cutting-wires-with-lineman-s-pliers.jpg",
+    ctaLabel: "Neem contact op",
+    ctaLink: "/contact",
+    ctaGold: false
   },
   {
     title: "Verbouw",
     description: "Van kleine aanpassingen tot grote verbouwingen en aanbouwen. Wij realiseren uw woonwensen met oog voor detail, kwaliteit en een strakke afwerking.",
     icon: "fa-trowel-bricks",
-    image: "/man-working-factory.jpg"
-  },
-  {
-    title: "Kunststofkozijnen",
-    description: "Plaatsen van nieuwe, hoogwaardig isolerende kunststof kozijnen en deuren. Voor een vernieuwde uitstraling, optimaal wooncomfort en lagere energiekosten.",
-    icon: "fa-door-open",
-    image: "/kunsttofkozijn-diensten.png"
+    image: "/man-working-factory.jpg",
+    ctaLabel: "Neem contact op",
+    ctaLink: "/contact",
+    ctaGold: false
   },
   {
     title: "Aardbevingsherstel",
     description: "Vakkundig herstel van bevingsschade en preventieve versterking van uw woning of bedrijfspand. Wij zorgen voor een veilig, duurzaam en toekomstbestendig resultaat.",
     icon: "fa-helmet-safety",
-    image: "/bevingschade-vlag.png"
+    image: "/bevingschade-vlag.png",
+    ctaLabel: "Neem contact op",
+    ctaLink: "/contact",
+    ctaGold: false
   }
 ];
 
@@ -52,9 +64,15 @@ const Services: React.FC = () => {
               <div className="p-12 flex flex-col flex-grow">
                 <h3 className="text-2xl font-black mb-8 uppercase tracking-tight text-[#e09d37] leading-tight">{service.title}</h3>
                 <p className="text-gray-300 mb-10 flex-grow text-lg leading-relaxed font-normal">{service.description}</p>
-                <Link to="/offerte" className="inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[11px] hover:text-[#e09d37] transition-all group/link">
-                  PRIJSINDICATIE AANVRAGEN <i className="fas fa-arrow-right transform group-hover/link:translate-x-2 transition-transform"></i>
-                </Link>
+                {service.ctaGold ? (
+                  <Link to={service.ctaLink} className="inline-flex items-center gap-3 bg-[#e09d37] text-black px-7 py-3 rounded-sm text-[11px] font-black uppercase tracking-widest hover:bg-black hover:text-[#e09d37] transition-all shadow-lg">
+                    {service.ctaLabel} <i className="fas fa-arrow-right"></i>
+                  </Link>
+                ) : (
+                  <Link to={service.ctaLink} className="inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[11px] hover:text-[#e09d37] transition-all group/link">
+                    {service.ctaLabel} <i className="fas fa-arrow-right transform group-hover/link:translate-x-2 transition-transform"></i>
+                  </Link>
+                )}
               </div>
             </div>
           ))}

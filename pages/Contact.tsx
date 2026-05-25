@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="lg:col-span-2 bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 border border-gray-50">
-              <h3 className="text-2xl font-black mb-10 uppercase tracking-tight italic">Stuur een Bericht</h3>
+              <h3 className="text-2xl font-black mb-10 uppercase tracking-tight italic text-gray-900">Stuur een Bericht</h3>
               {submitted ? (
                 <div className="bg-green-50 text-green-700 p-8 rounded-2xl border border-green-100">
                   <div className="flex items-center gap-3 mb-2"><i className="fas fa-check-circle text-xl"></i><span className="font-bold">Bericht Verzonden!</span></div>

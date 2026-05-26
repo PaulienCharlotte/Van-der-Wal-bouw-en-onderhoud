@@ -11,10 +11,10 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [react()],
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY ?? env.AISTUDIO_REALISATIES ?? ''),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY ?? env.AISTUDIO_REALISATIES ?? ''),
-        'process.env.SUPABASE_URL': JSON.stringify(env.SUPABASE_URL ?? ''),
-        'process.env.SUPABASE_ANON_KEY': JSON.stringify(env.SUPABASE_ANON_KEY ?? env.SUPA_ANON_DATABASE_REALISATIE ?? ''),
+        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY ?? process.env.GEMINI_API_KEY ?? env.AISTUDIO_REALISATIES ?? process.env.AISTUDIO_REALISATIES ?? ''),
+        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY ?? process.env.GEMINI_API_KEY ?? env.AISTUDIO_REALISATIES ?? process.env.AISTUDIO_REALISATIES ?? ''),
+        'process.env.SUPABASE_URL': JSON.stringify(env.SUPABASE_URL ?? process.env.SUPABASE_URL ?? ''),
+        'process.env.SUPABASE_ANON_KEY': JSON.stringify(env.SUPABASE_ANON_KEY ?? process.env.SUPABASE_ANON_KEY ?? env.SUPA_ANON_DATABASE_REALISATIE ?? process.env.SUPA_ANON_DATABASE_REALISATIE ?? ''),
       },
       resolve: {
         alias: {

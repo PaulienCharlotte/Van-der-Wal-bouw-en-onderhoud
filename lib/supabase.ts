@@ -6,8 +6,8 @@ const key = process.env.SUPABASE_ANON_KEY ?? '';
 export const isSupabaseConfigured = url.startsWith('https://') && key.length > 20;
 
 export const supabase = createClient(
-  url || 'https://placeholder.supabase.co',
-  key || 'placeholder-key',
+  isSupabaseConfigured ? url : 'https://placeholder.supabase.co',
+  isSupabaseConfigured ? key : 'placeholder-key',
 );
 
 export interface ProjectRow {

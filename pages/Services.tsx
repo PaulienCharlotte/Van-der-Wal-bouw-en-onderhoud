@@ -224,45 +224,45 @@ const ServicesHero: React.FC = () => {
                 }}
               />
 
-              {/* Linksboven: dynamisch label */}
+              {/* Elegant info-element linksonder: icoon + label gecombineerd */}
               <div
-                key={`tag-${index}`}
-                className="absolute top-2 left-2 bg-black/60 backdrop-blur-md border border-[#e09d37]/30 px-4 py-2 rounded-sm animate-[fade-in_0.6s_ease-out]"
+                key={`info-${index}`}
+                className="absolute bottom-6 left-6 right-6 flex items-center gap-4 animate-[fade-in_0.6s_ease-out]"
                 style={{ transform: 'translateZ(130px)' }}
               >
-                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-[#e09d37]">{current.heroTagline}</p>
-                <p className="text-[10px] font-bold text-white mt-0.5">{current.heroSubline}</p>
-              </div>
-
-              {/* Rechtsonder: icoon van de dienst */}
-              <div
-                key={`icon-${index}`}
-                className="absolute bottom-2 right-2 bg-[#e09d37] text-black w-14 h-14 rounded-sm shadow-2xl flex items-center justify-center animate-[fade-in_0.6s_ease-out]"
-                style={{
-                  transform: `translateZ(140px) scale(${active ? 1.08 : 1})`,
-                  transition: 'transform 0.3s ease-out',
-                  boxShadow: '0 20px 40px -10px rgba(224,157,55,0.6)',
-                }}
-              >
-                <i className={`fas ${current.icon} text-xl`}></i>
-              </div>
-
-              {/* Futuristische hoek-markers */}
-              {[
-                { pos: 'top-0 left-0', rotate: 'rotate-0' },
-                { pos: 'top-0 right-0', rotate: 'rotate-90' },
-                { pos: 'bottom-0 right-0', rotate: 'rotate-180' },
-                { pos: 'bottom-0 left-0', rotate: '-rotate-90' },
-              ].map((corner, i) => (
-                <div
-                  key={i}
-                  className={`absolute ${corner.pos} w-8 h-8 ${corner.rotate}`}
-                  style={{ transform: 'translateZ(50px)' }}
-                >
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-[#e09d37]" />
-                  <div className="absolute top-0 left-0 w-[2px] h-full bg-[#e09d37]" />
+                <div className="shrink-0 w-12 h-12 border border-[#e09d37]/40 bg-black/40 backdrop-blur-md flex items-center justify-center">
+                  <i className={`fas ${current.icon} text-[#e09d37] text-lg`}></i>
                 </div>
-              ))}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-6 h-[1.5px] bg-[#e09d37]" />
+                    <span className="text-[9px] font-black uppercase tracking-[0.3em] text-[#e09d37]">
+                      {current.heroTagline}
+                    </span>
+                  </div>
+                  <p className="text-sm font-bold text-white tracking-tight truncate">
+                    {current.heroSubline}
+                  </p>
+                </div>
+              </div>
+
+              {/* Futuristische hoek-markers — elk handmatig op de juiste hoek */}
+              <div className="absolute top-0 left-0 w-8 h-8 pointer-events-none" style={{ transform: 'translateZ(50px)' }}>
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-[#e09d37]" />
+                <div className="absolute top-0 left-0 w-[2px] h-full bg-[#e09d37]" />
+              </div>
+              <div className="absolute top-0 right-0 w-8 h-8 pointer-events-none" style={{ transform: 'translateZ(50px)' }}>
+                <div className="absolute top-0 right-0 w-full h-[2px] bg-[#e09d37]" />
+                <div className="absolute top-0 right-0 w-[2px] h-full bg-[#e09d37]" />
+              </div>
+              <div className="absolute bottom-0 left-0 w-8 h-8 pointer-events-none" style={{ transform: 'translateZ(50px)' }}>
+                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e09d37]" />
+                <div className="absolute bottom-0 left-0 w-[2px] h-full bg-[#e09d37]" />
+              </div>
+              <div className="absolute bottom-0 right-0 w-8 h-8 pointer-events-none" style={{ transform: 'translateZ(50px)' }}>
+                <div className="absolute bottom-0 right-0 w-full h-[2px] bg-[#e09d37]" />
+                <div className="absolute bottom-0 right-0 w-[2px] h-full bg-[#e09d37]" />
+              </div>
             </div>
           </div>
 

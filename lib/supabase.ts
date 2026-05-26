@@ -1,14 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 
-const url: string = (import.meta.env.SUPABASE_URL as string) ?? '';
-const key: string = ((import.meta.env.SUPA_ANON_DATABASE_REALISATIE ?? import.meta.env.SUPABASE_ANON_KEY) as string) ?? '';
+const url = 'https://lbllasgphxxxwieahgvj.supabase.co';
+const key = 'sb_publishable_Tj3r9AoQmoW1TtRs6mN1Mg_RP_7y2z5';
 
-export const isSupabaseConfigured = url.startsWith('https://') && key.length > 20;
+export const isSupabaseConfigured = true;
 
-export const supabase = createClient(
-  isSupabaseConfigured ? url : 'https://placeholder.supabase.co',
-  isSupabaseConfigured ? key : 'placeholder-key',
-);
+export const supabase = createClient(url, key);
 
 export interface ProjectRow {
   id: string;

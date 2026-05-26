@@ -169,6 +169,7 @@ const Footer: React.FC = () => (
           <h4 className="text-[11px] font-black text-[#e09d37] uppercase tracking-[0.2em] mb-8">Social</h4>
           <div className="flex space-x-6">
             <a href="https://www.linkedin.com/in/jasper-van-der-wal-a26a23319/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#e09d37] transition-colors text-2xl"><i className="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/jvanderwalbouwenonderhoud/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#e09d37] transition-colors text-2xl"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>

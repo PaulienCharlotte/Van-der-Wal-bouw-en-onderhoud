@@ -124,25 +124,25 @@ const Header: React.FC = () => {
               </Link>
             </nav>
 
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`lg:hidden p-2 transition-colors ${isSolidHeader || isDarkPage ? 'text-white' : 'text-gray-900'}`}>
+            <button aria-label="Menu openen" onClick={() => setIsMenuOpen(!isMenuOpen)} className={`lg:hidden flex h-11 w-11 items-center justify-center transition-colors ${isSolidHeader || isDarkPage ? 'text-white' : 'text-gray-900'}`}>
               <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
             </button>
           </div>
         </div>
       </header>
 
-      <div className={`fixed inset-0 z-[110] bg-[#0a0a0a] transition-all duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col h-full p-10 pt-32">
-          <button onClick={() => setIsMenuOpen(false)} className="absolute top-10 right-10 text-white text-3xl">
+      <div className={`fixed inset-0 z-[110] overflow-x-hidden overflow-y-auto bg-[#0a0a0a] transition-all duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex min-h-full flex-col p-8 pt-28 sm:p-10 sm:pt-32">
+          <button aria-label="Menu sluiten" onClick={() => setIsMenuOpen(false)} className="absolute right-8 top-8 flex h-11 w-11 items-center justify-center text-3xl text-white sm:right-10 sm:top-10">
             <i className="fas fa-times"></i>
           </button>
-          <nav className="flex flex-col space-y-8">
+          <nav className="flex min-w-0 flex-col space-y-8">
             {navItems.concat([{ label: 'Offerte', path: '/offerte' }]).map((item) => (
-              <Link key={item.label} to={item.path} className="text-5xl font-extrabold uppercase tracking-tighter text-white hover:text-[#e09d37]">
+              <Link key={item.label} to={item.path} className="max-w-full break-words text-4xl font-extrabold uppercase leading-tight tracking-tighter text-white hover:text-[#e09d37] sm:text-5xl">
                 {item.label}
               </Link>
             ))}
-            <a href="/garageboxen-verhuur.html" className="text-5xl font-extrabold uppercase tracking-tighter text-white hover:text-[#e09d37]">
+            <a href="/garageboxen-verhuur.html" className="max-w-full break-words text-4xl font-extrabold uppercase leading-tight tracking-tighter text-white hover:text-[#e09d37] sm:text-5xl">
               Garageboxen
             </a>
           </nav>
@@ -154,7 +154,7 @@ const Header: React.FC = () => {
 
 const Footer: React.FC = () => (
   <footer className="bg-[#0a0a0a] text-white pt-24 pb-12 border-t border-white/10 relative z-10">
-    <div className="max-w-7xl mx-auto px-10">
+    <div className="max-w-7xl mx-auto px-6 sm:px-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
         <div className="col-span-1 md:col-span-2">
           <LogoFull className="h-28 w-28" color="#e09d37" />
@@ -177,12 +177,12 @@ const Footer: React.FC = () => (
           </div>
         </div>
       </div>
-      <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em] gap-4">
+      <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-10 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 md:flex-row md:text-left">
         <p>&copy; {new Date().getFullYear()} Van der Wal Bouw & Onderhoud.</p>
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 md:justify-end">
           <a href="/garageboxen-verhuur.html" className="hover:text-white transition-colors">Garageboxen</a>
-          <a href="#" className="hover:text-white transition-colors">Privacybeleid</a>
-          <a href="#" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
+          <a href="/privacyverklaring.html" className="hover:text-white transition-colors">Privacyverklaring</a>
+          <a href="/algemene-voorwaarden.html" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
         </div>
       </div>
     </div>

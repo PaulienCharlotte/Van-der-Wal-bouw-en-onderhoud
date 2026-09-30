@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacyverklaring van Van der Wal Bouw en Onderhoud.">
+  <title>Privacyverklaring | Van der Wal Bouw en Onderhoud</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --muted: #62656a;
+      --line: #dedede;
+      --soft: #f4f4f2;
+      --gold: #e09d37;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, Arial, sans-serif; line-height: 1.65; }
+    a { color: inherit; }
+    .site-header { height: 76px; background: var(--ink); color: white; display: flex; align-items: center; position: sticky; top: 0; z-index: 20; border-bottom: 1px solid #292929; }
+    .header-inner { width: min(1080px, calc(100% - 48px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .brand-mark { color: var(--gold); font-size: 31px; line-height: 1; transform: rotate(45deg); }
+    .brand-name { display: block; color: var(--gold); font-weight: 900; font-size: 18px; line-height: 1; }
+    .brand-sub { display: block; color: #a9a9a9; font-weight: 700; font-size: 8px; letter-spacing: .22em; margin-top: 6px; }
+    .back-link { color: #e2e2e2; text-decoration: none; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+    .back-link:hover { color: var(--gold); }
+    .hero { background: var(--soft); border-bottom: 1px solid var(--line); }
+    .hero-inner { width: min(1080px, calc(100% - 48px)); margin: 0 auto; padding: 72px 0 60px; }
+    .eyebrow { margin: 0 0 14px; color: #96621a; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .18em; }
+    h1 { margin: 0; font-size: clamp(36px, 5vw, 64px); line-height: 1.02; letter-spacing: 0; }
+    .intro { max-width: 760px; margin: 24px 0 0; color: var(--muted); font-size: 17px; }
+    .meta { margin-top: 24px; color: var(--muted); font-size: 13px; }
+    .layout { width: min(1080px, calc(100% - 48px)); margin: 0 auto; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 72px; align-items: start; padding: 58px 0 100px; }
+    .toc { position: sticky; top: 108px; }
+    .toc h2 { margin: 0 0 17px; font-size: 11px; text-transform: uppercase; letter-spacing: .18em; }
+    .toc nav { border-top: 1px solid var(--line); }
+    .toc a { display: grid; grid-template-columns: 26px 1fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: #4e5155; font-size: 12px; line-height: 1.35; }
+    .toc a span { color: #9b6519; font-weight: 900; }
+    .toc a:hover { color: var(--ink); }
+    .section { padding: 0 0 48px; margin: 0 0 48px; border-bottom: 1px solid var(--line); }
+    .section:last-child { margin-bottom: 0; }
+    .section-label { color: #96621a; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .14em; }
+    h2 { margin: 7px 0 22px; font-size: 29px; line-height: 1.2; letter-spacing: 0; }
+    h3 { margin: 28px 0 9px; font-size: 17px; line-height: 1.35; }
+    p { margin: 0 0 15px; }
+    ul { margin: 0; padding-left: 21px; }
+    li { margin: 0 0 9px; padding-left: 5px; }
+    .contact-line { font-weight: 800; }
+    .text-link { color: #825313; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .site-footer { background: var(--ink); color: #b5b5b5; padding: 38px 0; }
+    .footer-inner { width: min(1080px, calc(100% - 48px)); margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px 28px; font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .footer-inner a { color: var(--gold); text-decoration: none; font-weight: 800; }
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; gap: 42px; }
+      .toc { position: static; }
+      .toc nav { columns: 2; column-gap: 28px; }
+      .toc a { break-inside: avoid; }
+    }
+    @media (max-width: 600px) {
+      .header-inner, .hero-inner, .layout, .footer-inner { width: min(100% - 32px, 1080px); }
+      .site-header { height: 68px; }
+      .brand-name { font-size: 15px; }
+      .brand-sub { font-size: 7px; }
+      .back-link { font-size: 10px; }
+      .hero-inner { padding: 48px 0 42px; }
+      .intro { font-size: 15px; }
+      .layout { padding: 38px 0 68px; }
+      .toc nav { columns: 1; }
+      .section { padding-bottom: 38px; margin-bottom: 38px; }
+      h2 { font-size: 24px; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media print {
+      .site-header, .toc, .site-footer { display: none; }
+      .hero-inner, .layout { width: 100%; }
+      .hero-inner { padding: 20px 0 30px; }
+      .layout { display: block; padding: 30px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">+</span>
+        <span><span class="brand-name">VAN DER WAL</span><span class="brand-sub">BOUW &amp; ONDERHOUD</span></span>
+      </a>
+      <a class="back-link" href="/">Terug naar website</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Van der Wal Bouw en Onderhoud</p>
+        <h1>Privacyverklaring</h1>
+        <p class="intro">Wij gaan zorgvuldig om met persoonsgegevens. In deze verklaring leggen wij in duidelijke taal uit welke gegevens wij gebruiken, waarom dat nodig is en welke keuzes u daarbij heeft.</p>
+        <p class="meta"><strong>Laatst bijgewerkt:</strong> 30 september 2026</p>
+      </div>
+    </section>
+
+    <div class="layout">
+      <aside class="toc" aria-label="Inhoudsopgave">
+        <h2>Inhoudsopgave</h2>
+        <nav>
+          <a href="#verantwoordelijke"><span>01</span>Wie is verantwoordelijk?</a>
+          <a href="#gegevens"><span>02</span>Welke gegevens?</a>
+          <a href="#doelen"><span>03</span>Doelen en grondslagen</a>
+          <a href="#delen"><span>04</span>Delen met anderen</a>
+          <a href="#bewaren"><span>05</span>Bewaartermijnen</a>
+          <a href="#cookies"><span>06</span>Website en cookies</a>
+          <a href="#beveiliging"><span>07</span>Beveiliging</a>
+          <a href="#rechten"><span>08</span>Uw rechten</a>
+          <a href="#contact"><span>09</span>Contact en klachten</a>
+        </nav>
+      </aside>
+
+      <div>
+        <section class="section" id="verantwoordelijke">
+          <span class="section-label">01</span>
+          <h2>Wie is verantwoordelijk?</h2>
+          <p>Van der Wal Bouw en Onderhoud is verantwoordelijk voor de verwerking van persoonsgegevens via deze website en tijdens het uitvoeren van opdrachten.</p>
+          <p class="contact-line">Van der Wal Bouw en Onderhoud<br>Jonkersvaart 97<br>9354 TN Zevenhuizen<br>KvK 93553943<br><a class="text-link" href="mailto:info@vdwalbouw.nl">info@vdwalbouw.nl</a></p>
+        </section>
+
+        <section class="section" id="gegevens">
+          <span class="section-label">02</span>
+          <h2>Welke gegevens verwerken wij?</h2>
+          <p>Wij verwerken alleen gegevens die nodig zijn om een vraag, aanvraag of opdracht goed te behandelen. Het kan gaan om:</p>
+          <ul>
+            <li>naam, e-mailadres en telefoonnummer;</li>
+            <li>berichten, opmerkingen en andere informatie die u zelf verstrekt;</li>
+            <li>gegevens over een offerteaanvraag, zoals maten, aantallen, materialen, kleuren en productkeuzes;</li>
+            <li>bij een garageboxaanvraag: het gewenste formaat, de gewenste startdatum en uw bericht;</li>
+            <li>adres-, factuur- en betaalgegevens wanneer u klant wordt;</li>
+            <li>technische gegevens, zoals IP-adres, browsertype en loggegevens, voor zover onze hosting- of beveiligingsdiensten deze automatisch verwerken.</li>
+          </ul>
+          <p>Wij vragen via de website niet om bijzondere persoonsgegevens, zoals medische gegevens of een kopie van uw identiteitsbewijs. Vermeld zulke informatie daarom niet in een vrij tekstveld.</p>
+        </section>
+
+        <section class="section" id="doelen">
+          <span class="section-label">03</span>
+          <h2>Waarom gebruiken wij deze gegevens?</h2>
+          <h3>Contact, offertes en aanvragen</h3>
+          <p>Wij gebruiken uw gegevens om vragen te beantwoorden, een offerte op te stellen, de beschikbaarheid van een garagebox te controleren en contact met u op te nemen. De grondslag hiervoor is het voorbereiden of uitvoeren van een overeenkomst.</p>
+          <h3>Uitvoering en administratie</h3>
+          <p>Wanneer u klant wordt, gebruiken wij de noodzakelijke gegevens voor planning, uitvoering, communicatie, facturering en onze administratie. Dit gebeurt voor de uitvoering van de overeenkomst en om aan wettelijke verplichtingen te voldoen.</p>
+          <h3>Beveiliging van de website</h3>
+          <p>Technische gegevens kunnen worden gebruikt om de website beschikbaar en veilig te houden, misbruik te voorkomen en storingen op te lossen. Dit doen wij op basis van ons gerechtvaardigd belang bij een veilige en goed werkende website.</p>
+          <p>Wij gebruiken uw gegevens niet voor geautomatiseerde besluitvorming, profilering of gerichte reclame. Wij verkopen persoonsgegevens niet.</p>
+        </section>
+
+        <section class="section" id="delen">
+          <span class="section-label">04</span>
+          <h2>Met wie delen wij gegevens?</h2>
+          <p>Wij delen persoonsgegevens alleen wanneer dit nodig is voor onze dienstverlening of wanneer de wet dit verplicht. Daarbij kunnen wij gebruikmaken van:</p>
+          <ul>
+            <li><strong>Netlify</strong> voor hosting en het veilig ontvangen en opslaan van websiteformulieren;</li>
+            <li><strong>onze e-mailprovider</strong> voor het ontvangen en beantwoorden van berichten;</li>
+            <li><strong>boekhouding en adviseurs</strong> wanneer gegevens onderdeel zijn van onze bedrijfsadministratie;</li>
+            <li><strong>Supabase</strong> voor websitebeheer en het tonen van projectinformatie. Aanvragen uit de contact-, offerte- en garageboxformulieren worden niet in Supabase opgeslagen;</li>
+            <li>overheidsinstanties als wij wettelijk verplicht zijn gegevens te verstrekken.</li>
+          </ul>
+          <p>Met dienstverleners die namens ons persoonsgegevens verwerken, maken wij passende privacy- en beveiligingsafspraken. Sommige technische dienstverleners zijn buiten de Europese Economische Ruimte gevestigd. Wanneer persoonsgegevens buiten de EER worden verwerkt, maken wij gebruik van de waarborgen die de betreffende dienstverlener daarvoor aanbiedt, zoals een adequaatheidsbesluit of de standaardcontractbepalingen van de Europese Commissie.</p>
+        </section>
+
+        <section class="section" id="bewaren">
+          <span class="section-label">05</span>
+          <h2>Hoe lang bewaren wij gegevens?</h2>
+          <ul>
+            <li>contact-, offerte- en garageboxaanvragen die niet tot een overeenkomst leiden: maximaal 12 maanden na het laatste contact;</li>
+            <li>gegevens die nodig zijn voor een lopende opdracht of huurovereenkomst: zolang de overeenkomst loopt en daarna zolang dat nodig is voor eventuele vragen of aanspraken;</li>
+            <li>gegevens die onderdeel zijn van de fiscale administratie: in beginsel 7 jaar, of langer wanneer een wettelijke bewaarplicht dat vereist;</li>
+            <li>technische loggegevens: zo kort mogelijk en alleen langer wanneer dat nodig is voor beveiliging, onderzoek naar misbruik of een wettelijke verplichting.</li>
+          </ul>
+          <p>Als gegevens niet langer nodig zijn, verwijderen of anonimiseren wij deze.</p>
+        </section>
+
+        <section class="section" id="cookies">
+          <span class="section-label">06</span>
+          <h2>Website, cookies en externe onderdelen</h2>
+          <p>Deze website gebruikt geen advertentie- of trackingcookies. Technisch noodzakelijke opslag kan worden gebruikt om onderdelen van de website goed en veilig te laten werken. Daarvoor is geen aparte toestemming nodig.</p>
+          <p>Voor de vormgeving en werking van de website kunnen technische bestanden, zoals lettertypen, pictogrammen en scripts, via externe contentnetwerken worden geladen. Deze aanbieders kunnen daarbij technische verbindingsgegevens, zoals het IP-adres en browsertype, ontvangen. Wij gebruiken deze gegevens niet om bezoekers over verschillende websites te volgen.</p>
+        </section>
+
+        <section class="section" id="beveiliging">
+          <span class="section-label">07</span>
+          <h2>Hoe beveiligen wij gegevens?</h2>
+          <p>Wij nemen passende technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen verlies, misbruik en onbevoegde toegang. Toegang tot aanvragen en administratie is beperkt tot personen en dienstverleners die deze gegevens voor hun werkzaamheden nodig hebben.</p>
+          <p>Heeft u het vermoeden dat gegevens niet goed beveiligd zijn? Neem dan direct contact met ons op via <a class="text-link" href="mailto:info@vdwalbouw.nl">info@vdwalbouw.nl</a>.</p>
+        </section>
+
+        <section class="section" id="rechten">
+          <span class="section-label">08</span>
+          <h2>Welke rechten heeft u?</h2>
+          <p>U kunt ons verzoeken om:</p>
+          <ul>
+            <li>inzage in de persoonsgegevens die wij van u verwerken;</li>
+            <li>onjuiste of onvolledige gegevens te corrigeren;</li>
+            <li>gegevens te verwijderen, voor zover wij deze niet wettelijk moeten bewaren;</li>
+            <li>de verwerking te beperken of daartegen bezwaar te maken;</li>
+            <li>gegevens digitaal over te dragen wanneer het recht op overdraagbaarheid van toepassing is.</li>
+          </ul>
+          <p>Stuur uw verzoek naar <a class="text-link" href="mailto:info@vdwalbouw.nl">info@vdwalbouw.nl</a>. Wij reageren in beginsel binnen één maand. Om misbruik te voorkomen kunnen wij aanvullende informatie vragen om uw identiteit vast te stellen. Wij vragen daarbij niet meer gegevens dan noodzakelijk.</p>
+        </section>
+
+        <section class="section" id="contact">
+          <span class="section-label">09</span>
+          <h2>Vragen, klachten en wijzigingen</h2>
+          <p>Heeft u een vraag of klacht over het gebruik van uw persoonsgegevens? Mail dan naar <a class="text-link" href="mailto:info@vdwalbouw.nl">info@vdwalbouw.nl</a>. U heeft daarnaast het recht om een klacht in te dienen bij de <a class="text-link" href="https://autoriteitpersoonsgegevens.nl/een-tip-of-klacht-indienen-bij-de-ap" target="_blank" rel="noopener noreferrer">Autoriteit Persoonsgegevens</a>.</p>
+          <p>Wij kunnen deze privacyverklaring aanpassen wanneer onze website, dienstverlening of regelgeving verandert. Op deze pagina staat altijd de actuele versie met de datum van de laatste wijziging.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 Van der Wal Bouw &amp; Onderhoud.</span>
+      <div class="footer-links"><a href="/algemene-voorwaarden.html">Algemene voorwaarden</a><a href="mailto:info@vdwalbouw.nl">info@vdwalbouw.nl</a></div>
+    </div>
+  </footer>
+</body>
+</html>

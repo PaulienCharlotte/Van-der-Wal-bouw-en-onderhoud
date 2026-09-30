@@ -38,28 +38,28 @@ const Home: React.FC = () => {
       </section>
 
       {/* Kerngebieden Section */}
-      <section className="py-40 bg-white">
+      <section className="bg-white py-24 md:py-40">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-32">
             <span className="text-[#e09d37] font-black uppercase tracking-[0.4em] text-[12px] mb-6 block">ONZE FOCUS</span>
             <h2 className="text-4xl md:text-7xl font-extrabold text-black tracking-tighter uppercase leading-tight">VAKMANSCHAP <br />IN DE PRAKTIJK</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16 grid-container-hamer">
+          <div className="grid-container-hamer grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-10">
             {[
               { title: 'ONDERHOUD & RENOVATIE', text: 'Vakkundig onderhoud en complete renovaties van uw woning of bedrijfspand. Wij zorgen voor een duurzaam en hoogwaardig resultaat, van dak tot fundering.' },
               { title: 'VERBOUW', text: 'Van kleine aanpassingen tot grote verbouwingen en aanbouwen. Wij realiseren uw woonwensen met oog voor detail, kwaliteit en een strakke afwerking.' },
               { title: 'KUNSTSTOFKOZIJNEN', text: 'Plaatsen van nieuwe, hoogwaardig isolerende kunststof kozijnen en deuren. Voor een vernieuwde uitstraling, optimaal wooncomfort en lagere energiekosten.' },
               { title: 'AARDBEVINGSHERSTEL', text: 'Vakkundig herstel van bevingsschade en preventieve versterking van uw pand. Wij zorgen voor een veilig en duurzaam resultaat.' }
             ].map((item, i) => (
-              <div key={i} className="group relative h-full">
+              <div key={i} className="group relative min-w-0 h-full">
                 <div className="absolute -top-14 -right-6 opacity-0 group-hover:opacity-100 group-hover:hammer-strike transition-opacity pointer-events-none z-[30]">
                   <i className="fas fa-hammer text-[#e09d37] text-5xl transform -scale-x-100 drop-shadow-2xl"></i>
                 </div>
 
-                <Link to="/diensten" className="block bg-[#111111] p-8 flex flex-col h-full min-h-[460px] justify-between shadow-xl rounded-xl border border-white/5 transition-all duration-400 hover:translate-y-[-10px] hover:bg-[#161616] hover:border-[#e09d37]/40 card-impact relative z-10 overflow-hidden">
-                  <div className="relative z-10">
-                    <h3 className="text-[#e09d37] text-lg font-black mb-6 uppercase leading-tight break-words group-hover:text-white transition-colors">{item.title}</h3>
+                <Link to="/diensten" className="card-impact relative z-10 flex h-full min-h-[460px] min-w-0 flex-col justify-between overflow-hidden rounded-xl border border-white/5 bg-[#111111] p-6 shadow-xl transition-all duration-400 hover:translate-y-[-10px] hover:border-[#e09d37]/40 hover:bg-[#161616] xl:p-8">
+                  <div className="relative z-10 min-w-0">
+                    <h3 lang="nl" className="mb-6 max-w-full hyphens-auto text-base font-black uppercase leading-tight text-[#e09d37] [overflow-wrap:anywhere] transition-colors group-hover:text-white 2xl:text-lg">{item.title}</h3>
                     <p className="text-gray-300 text-base leading-[1.7] font-normal group-hover:text-white transition-colors">{item.text}</p>
                   </div>
 
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Rechterkant: De Tekst */}
-            <div className="w-full lg:w-1/2 p-12 md:p-24 flex flex-col justify-center">
+            <div className="flex w-full flex-col justify-center p-8 sm:p-12 md:p-16 lg:w-1/2 xl:p-24">
               <span className="text-[#e09d37] font-black uppercase tracking-[0.4em] text-[12px] mb-10 block">PROJECT IN FOCUS</span>
               <h2 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-10">
                 VAN RUWBOUW <br />
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
       <section className="py-48 bg-gradient-to-b from-[#0a0a0a] to-[#050505] text-center border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-4xl md:text-8xl lg:text-9xl font-extrabold text-white tracking-tighter uppercase mb-16 leading-none text-shadow-lg">UW PROJECT, <br /><span className="text-[#e09d37]">ONZE</span> ZORG.</h2>
-          <Link to="/offerte" className="inline-block bg-[#e09d37] text-black px-16 py-8 rounded-md text-[13px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all shadow-2xl">
+          <Link to="/offerte" className="inline-block w-full max-w-sm rounded-md bg-[#e09d37] px-6 py-6 text-[12px] font-black uppercase tracking-[0.2em] text-black shadow-2xl transition-all hover:bg-white sm:w-auto sm:max-w-none sm:px-16 sm:py-8 sm:text-[13px] sm:tracking-[0.3em]">
             Start uw aanvraag
           </Link>
         </div>

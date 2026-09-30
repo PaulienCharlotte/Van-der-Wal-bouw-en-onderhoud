@@ -86,6 +86,10 @@ const Contact: React.FC = () => {
                     <input type="email" name="email" required placeholder="E-mail" value={formState.email} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 font-medium" />
                   </div>
                   <textarea name="bericht" required rows={6} placeholder="Uw bericht..." value={formState.message} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 resize-none font-normal"></textarea>
+                  <p className="text-xs leading-relaxed text-gray-500">
+                    Wij gebruiken uw gegevens alleen om uw bericht te beantwoorden. Lees meer in onze{' '}
+                    <a href="/privacyverklaring.html" className="font-bold text-gray-900 underline decoration-[#e09d37] underline-offset-4">privacyverklaring</a>.
+                  </p>
                   {error && <p className="text-red-600 text-sm">{error}</p>}
                   <button type="submit" disabled={sending} className="w-full md:w-auto bg-[#e09d37] text-black px-12 py-5 rounded-sm font-black uppercase tracking-widest text-[11px] hover:bg-black hover:text-[#e09d37] transition-all shadow-lg disabled:opacity-60">
                     {sending ? 'Verzenden...' : 'Verzenden'}

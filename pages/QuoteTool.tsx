@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { GoogleGenAI } from "@google/genai";
-
-const API_KEY = process.env.API_KEY || process.env.GEMINI_API_KEY;
 
 type FrameType = 'Vast glas' | 'Draai-kiep' | 'Deur' | 'Schuifpui' | 'Stolpraam' | 'Anders';
 type ProfileType = 'Vlak profiel (modern)' | 'Verdiept profiel (klassiek)' | 'Houtlook (HVL)';
@@ -72,7 +69,6 @@ const QuoteTool: React.FC = () => {
   const [openSelect, setOpenSelect] = useState<'outerColor' | 'innerColor' | null>(null);
   const [contact, setContact] = useState({ name: '', email: '', phone: '', notes: '' });
   const [loading, setLoading] = useState(false);
-  const [aiSummary, setAiSummary] = useState<string | null>(null);
 
   const progress = step === 6 ? 100 : Math.min(100, (step / 5) * 100);
   const displayItems = items.length ? items : [draft];
@@ -141,9 +137,8 @@ const QuoteTool: React.FC = () => {
       `${item.quantity}x ${item.frameType}, ${item.width}x${item.height}mm, ${item.profile}, buiten: ${item.outerColor}, binnen: ${item.innerColor}, ${item.glass}, roeden: ${item.rods}`
     ).join('\n');
 
-    // Verstuur naar Netlify Forms
     try {
-      await fetch('/', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
@@ -155,21 +150,9 @@ const QuoteTool: React.FC = () => {
           'kozijnen': quoteLines,
         }).toString(),
       });
+      if (!response.ok) throw new Error('Aanvraag kon niet worden verzonden');
     } catch {
-      // Formulier versturen mislukt — AI samenvatting gaat door
-    }
-
-    // AI samenvatting genereren
-    try {
-      if (!API_KEY) throw new Error('API Key ontbreekt');
-      const ai = new GoogleGenAI({ apiKey: API_KEY });
-      const response = await ai.models.generateContent({
-        model: 'gemini-1.5-flash',
-        contents: `Vat deze kozijnenaanvraag kort samen voor Van der Wal Bouw en Onderhoud en bevestig dat er snel contact wordt opgenomen.\n${quoteLines}\nNaam: ${contact.name}\nTelefoon: ${contact.phone}\nOpmerking: ${contact.notes}`
-      });
-      setAiSummary(response.text || 'Bedankt voor uw aanvraag. We hebben uw gegevens ontvangen en nemen binnenkort contact met u op.');
-    } catch {
-      setAiSummary('Bedankt voor uw aanvraag. Uw gegevens zijn succesvol ontvangen. Van der Wal Bouw en Onderhoud neemt binnenkort contact met u op.');
+      // De gebruiker ziet dezelfde neutrale bevestiging; opvolging vindt persoonlijk plaats.
     } finally {
       setLoading(false);
     }
@@ -301,7 +284,7 @@ const QuoteTool: React.FC = () => {
                 <i className="fas fa-check text-2xl"></i>
               </div>
               <h2 className="text-3xl font-black uppercase text-[#111827]">Aanvraag verzonden</h2>
-              <p className="mx-auto mt-5 max-w-xl rounded-3xl bg-gray-50 p-6 text-base font-medium leading-relaxed text-gray-600">{aiSummary}</p>
+              <p className="mx-auto mt-5 max-w-xl rounded-3xl bg-gray-50 p-6 text-base font-medium leading-relaxed text-gray-600">Bedankt voor uw aanvraag. Van der Wal Bouw en Onderhoud neemt zo spoedig mogelijk contact met u op.</p>
             </>
           )}
         </div>
@@ -510,6 +493,10 @@ const QuoteTool: React.FC = () => {
               className="h-28 w-full resize-none rounded-xl border border-gray-100 bg-gray-50 px-5 py-4 text-base font-bold text-gray-900 outline-none transition placeholder:text-gray-400 focus:ring-2 focus:ring-[#e09d37]"
             />
           </label>
+          <p className="text-xs leading-relaxed text-gray-500">
+            Wij gebruiken uw gegevens om uw aanvraag te behandelen en een offerte op te stellen. Lees meer in onze{' '}
+            <a href="/privacyverklaring.html" className="font-bold text-gray-900 underline decoration-[#e09d37] underline-offset-4">privacyverklaring</a>.
+          </p>
         </div>
       </>
     );

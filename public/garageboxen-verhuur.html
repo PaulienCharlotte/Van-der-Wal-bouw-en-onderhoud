@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Huur een geïsoleerde en geventileerde garagebox in Jonkersvaart.">
+  <title>Garagebox huren in Jonkersvaart | Van der Wal</title>
+  <style>
+    :root { --ink:#111; --gold:#e09d37; --paper:#f7f7f5; --line:#deded8; --muted:#62645f; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:inherit; }
+    .wrap { width:min(1100px,calc(100% - 40px)); margin:auto; }
+    .topbar { background:#0a0a0a; color:white; }
+    .topbar .wrap { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { color:var(--gold); font-weight:900; text-decoration:none; text-transform:uppercase; letter-spacing:.03em; }
+    .back { color:#ddd; font-size:.9rem; text-decoration:none; }
+    .back:hover { color:var(--gold); }
+    header { background:var(--paper); padding:72px 0 64px; border-bottom:1px solid var(--line); }
+    .eyebrow { color:#9a6619; font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; }
+    h1 { font-size:clamp(2.25rem,6vw,4.4rem); line-height:1.05; max-width:760px; margin:.5rem 0 1rem; }
+    h2 { font-size:clamp(1.6rem,3vw,2.25rem); line-height:1.15; margin:0 0 1.25rem; }
+    .lead { max-width:650px; color:var(--muted); font-size:1.15rem; }
+    .button { display:inline-block; border:0; border-radius:4px; padding:13px 20px; background:var(--gold); color:#080808; font:inherit; font-weight:800; text-decoration:none; cursor:pointer; }
+    .button:hover { background:#0a0a0a; color:white; }
+    .button:disabled { cursor:wait; opacity:.65; }
+    section { padding:58px 0; }
+    .benefits { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .benefit,.card { border:1px solid var(--line); border-radius:8px; padding:20px; background:white; }
+    .benefit strong { display:block; margin-bottom:4px; }
+    .benefit span,.muted { color:var(--muted); }
+    .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .card { background:var(--paper); padding:26px; }
+    .size { font-size:2rem; font-weight:900; margin:.25rem 0; }
+    .price { font-size:1.2rem; margin:0 0 1.1rem; }
+    .fine { font-size:.9rem; color:var(--muted); }
+    .booking { background:var(--paper); }
+    form { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:760px; }
+    label { display:grid; gap:6px; font-weight:700; }
+    input,select,textarea { width:100%; padding:12px; border:1px solid #bfc0ba; border-radius:5px; background:white; color:var(--ink); font:inherit; }
+    input:focus,select:focus,textarea:focus { outline:2px solid var(--gold); outline-offset:1px; }
+    textarea { min-height:100px; resize:vertical; }
+    .wide { grid-column:1/-1; }
+    .honeypot { position:absolute; left:-9999px; }
+    .status { margin:12px 0 0; font-weight:700; }
+    .status.success { color:#21633d; }
+    .status.error { color:#a22b2b; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:0; list-style:none; counter-reset:step; }
+    .steps li { counter-increment:step; border-top:3px solid var(--gold); padding-top:12px; }
+    .steps li::before { content:counter(step) ". "; font-weight:900; color:#9a6619; }
+    footer { background:#0a0a0a; color:white; padding:32px 0; }
+    footer a { color:var(--gold); }
+    @media(max-width:700px) { header { padding:52px 0; } .benefits,.cards,.steps { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px) { .wrap { width:min(100% - 28px,1100px); } .topbar .wrap { align-items:flex-start; flex-direction:column; padding:18px 0; gap:4px; } .benefits,.cards,.steps,form { grid-template-columns:1fr; } .wide { grid-column:auto; } }
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Hoofdnavigatie">
+    <div class="wrap">
+      <a class="brand" href="/">Van der Wal Bouw &amp; Onderhoud</a>
+      <a class="back" href="/">Terug naar de hoofdwebsite</a>
+    </div>
+  </nav>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Opslagruimte in Jonkersvaart</div>
+      <h1>Garagebox huren in Jonkersvaart</h1>
+      <p class="lead">Een nette, beschutte plek voor je spullen, voorraad of gereedschap. Kies het formaat dat bij je past en vraag eenvoudig een box aan.</p>
+      <a class="button" href="#boxen">Bekijk de boxen</a>
+    </div>
+  </header>
+  <main>
+    <section aria-labelledby="voordelen">
+      <div class="wrap">
+        <h2 id="voordelen">Praktisch en beschut opgeslagen</h2>
+        <div class="benefits">
+          <div class="benefit"><strong>Binnen in een grote schuur</strong><span>Je spullen staan beschut en extra veilig.</span></div>
+          <div class="benefit"><strong>Geïsoleerd en geventileerd</strong><span>Een verzorgde opslagruimte.</span></div>
+          <div class="benefit"><strong>Sensorverlichting</strong><span>Licht schakelt in wanneer dat nodig is.</span></div>
+          <div class="benefit"><strong>Ruime toegangstijden</strong><span>Zes dagen per week, van 07.00 tot 22.00 uur.</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="boxen" aria-labelledby="boxen-kop">
+      <div class="wrap">
+        <h2 id="boxen-kop">Kies jouw garagebox</h2>
+        <p class="muted">Selecteer een formaat en stuur een reserveringsaanvraag. De aanvraag is pas definitief nadat de beschikbaarheid is bevestigd.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="eyebrow">3 boxen</div><div class="size">18 m²</div>
+            <p class="price"><strong>&euro;150</strong> per maand</p>
+            <p class="fine">Geschikt voor extra opslagruimte, voorraad of gereedschap.</p>
+            <a class="button choose" href="#reserveren" data-size="18 m² - €150 per maand">Vraag deze box aan</a>
+          </article>
+          <article class="card">
+            <div class="eyebrow">1 box</div><div class="size">10 m²</div>
+            <p class="price"><strong>&euro;80</strong> per maand</p>
+            <p class="fine">Een compacte oplossing voor spullen die je veilig wilt opbergen.</p>
+            <a class="button choose" href="#reserveren" data-size="10 m² - €80 per maand">Vraag deze box aan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="booking" id="reserveren" aria-labelledby="reserveer-kop">
+      <div class="wrap">
+        <h2 id="reserveer-kop">Reserveringsaanvraag</h2>
+        <p class="muted">We nemen contact met je op om de beschikbaarheid en startdatum te bevestigen.</p>
+        <form id="booking-form" name="garagebox-aanvraag" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="garagebox-aanvraag">
+          <label class="honeypot">Niet invullen<input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          <label class="wide">Gewenste garagebox
+            <select name="box" id="box" required><option value="">Kies een formaat</option><option>18 m² - €150 per maand</option><option>10 m² - €80 per maand</option></select>
+          </label>
+          <label>Gewenste startdatum<input name="startdatum" type="date" required></label>
+          <label>Naam<input name="naam" autocomplete="name" required></label>
+          <label>E-mailadres<input name="email" type="email" autocomplete="email" required></label>
+          <label>Telefoonnummer<input name="telefoon" type="tel" autocomplete="tel" required></label>
+          <label class="wide">Bericht (optioneel)<textarea name="bericht" placeholder="Bijvoorbeeld: waarvoor je de box wilt gebruiken."></textarea></label>
+          <div class="wide"><button class="button" type="submit">Verstuur aanvraag</button><p id="form-status" class="status" role="status" aria-live="polite"></p></div>
+        </form>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><h2>Zo werkt het</h2><ol class="steps"><li>Kies het formaat en stuur je aanvraag.</li><li>We controleren of de box beschikbaar is op jouw startdatum.</li><li>Na onze bevestiging stemmen we de huur en toegang met je af.</li></ol></div>
+    </section>
+  </main>
+  <footer><div class="wrap"><strong>Garageboxen in Jonkersvaart</strong><p>Vragen? Mail <a href="mailto:info@vdwalbouw.nl">info@vdwalbouw.nl</a> of bel <a href="tel:+31648324729">06 48 32 47 29</a>.</p></div></footer>
+  <script>
+    document.querySelectorAll('.choose').forEach(function (link) {
+      link.addEventListener('click', function () { document.querySelector('#box').value = link.dataset.size; });
+    });
+    document.querySelector('#booking-form').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      var form = event.currentTarget;
+      var button = form.querySelector('button[type="submit"]');
+      var status = document.querySelector('#form-status');
+      button.disabled = true;
+      status.className = 'status';
+      status.textContent = 'Aanvraag wordt verzonden...';
+      try {
+        var response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+        if (!response.ok) throw new Error('Formulier kon niet worden verzonden');
+        form.reset();
+        status.className = 'status success';
+        status.textContent = 'Bedankt. Je aanvraag is verzonden naar Van der Wal Bouw & Onderhoud.';
+      } catch (error) {
+        status.className = 'status error';
+        status.innerHTML = 'Verzenden is niet gelukt. Mail je aanvraag naar <a href="mailto:info@vdwalbouw.nl">info@vdwalbouw.nl</a>.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

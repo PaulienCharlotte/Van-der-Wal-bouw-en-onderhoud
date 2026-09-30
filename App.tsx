@@ -117,6 +117,9 @@ const Header: React.FC = () => {
                   {item.label}
                 </Link>
               ))}
+              <a href="/garageboxen-verhuur.html" className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#e09d37] transition-all duration-300 hover:text-white">
+                Garageboxen
+              </a>
               <Link to="/offerte" className="bg-[#e09d37] text-black px-7 py-3 rounded-sm text-[11px] font-black uppercase tracking-widest hover:bg-black hover:text-[#e09d37] transition-all shadow-lg">
                 Offerte
               </Link>
@@ -140,6 +143,9 @@ const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
+            <a href="/garageboxen-verhuur.html" className="text-5xl font-extrabold uppercase tracking-tighter text-white hover:text-[#e09d37]">
+              Garageboxen
+            </a>
           </nav>
         </div>
       </div>
@@ -168,7 +174,6 @@ const Footer: React.FC = () => (
         <div>
           <h4 className="text-[11px] font-black text-[#e09d37] uppercase tracking-[0.2em] mb-8">Social</h4>
           <div className="flex space-x-6">
-            <a href="https://www.linkedin.com/in/jasper-van-der-wal-a26a23319/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#e09d37] transition-colors text-2xl"><i className="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/jvanderwalbouwenonderhoud/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#e09d37] transition-colors text-2xl"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
@@ -176,6 +181,7 @@ const Footer: React.FC = () => (
       <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em] gap-4">
         <p>&copy; {new Date().getFullYear()} Van der Wal Bouw & Onderhoud.</p>
         <div className="flex gap-8">
+          <a href="/garageboxen-verhuur.html" className="hover:text-white transition-colors">Garageboxen</a>
           <a href="#" className="hover:text-white transition-colors">Privacybeleid</a>
           <a href="#" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
         </div>

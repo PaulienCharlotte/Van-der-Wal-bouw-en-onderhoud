@@ -59,7 +59,7 @@ const emptyItem: WindowItem = {
   quantity: 1,
 };
 
-const buttonBase = 'rounded-xl font-black uppercase tracking-[0.14em] text-[10px] transition-all';
+const buttonBase = 'cta transition-all';
 const fieldLabelClass = 'mb-2 flex h-7 items-start text-[10px] font-black uppercase leading-tight tracking-[0.18em] text-gray-500';
 
 const QuoteTool: React.FC = () => {
@@ -507,8 +507,9 @@ const QuoteTool: React.FC = () => {
       <div className="mx-auto max-w-2xl">
         <div className="mb-6 text-center">
           <h1 lang="nl" className="text-2xl font-black uppercase leading-tight tracking-normal text-[#111827] sm:text-3xl [overflow-wrap:anywhere]">
-            Offerte voor kunststofkozijnen
+            Kozijnofferte
           </h1>
+          <p className="mt-2 text-sm text-gray-500">Voor kunststof kozijnen op maat.</p>
         </div>
 
         <div className="mx-auto overflow-hidden rounded-2xl bg-white shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
@@ -521,7 +522,7 @@ const QuoteTool: React.FC = () => {
             {renderStep()}
             {step < 7 && step !== 5 && (
               <div className="mt-8 flex items-center justify-between border-t border-gray-50 pt-5">
-                <button type="button" onClick={prevStep} disabled={step === 1} className={`text-[10px] font-black uppercase tracking-[0.18em] transition ${step === 1 ? 'pointer-events-none opacity-0' : 'text-gray-400 hover:text-[#111827]'}`}>
+                <button type="button" onClick={prevStep} disabled={step === 1} className={`action-link text-sm font-bold transition ${step === 1 ? 'pointer-events-none opacity-0' : 'text-gray-400 hover:text-[#111827]'}`}>
                   <i className="fas fa-arrow-left mr-2"></i>Vorige
                 </button>
                 <button type="button" onClick={nextStep} disabled={!canContinue} className={`${buttonBase} h-11 bg-[#111827] px-8 text-white shadow-lg hover:bg-[#e09d37] hover:text-black disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400 disabled:shadow-none`}>

@@ -1,0 +1,28 @@
+:root {
+  --brand-cta-radius: 8px;
+}
+
+/* Repeated class selectors keep these rules stable alongside Tailwind utilities. */
+.cta.cta {
+  border-radius: var(--brand-cta-radius);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.cta.cta:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.action-link.action-link {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.brand-name.brand-name {
+  text-transform: none;
+  letter-spacing: 0;
+}

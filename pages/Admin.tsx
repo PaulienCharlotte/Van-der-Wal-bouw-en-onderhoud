@@ -142,7 +142,7 @@ const LoginView: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#e09d37] text-black py-4 rounded-lg font-black uppercase tracking-widest text-[11px] hover:bg-white transition-colors disabled:opacity-50"
+            className="cta bg-[#e09d37] text-black py-4 font-black text-[11px] hover:bg-white transition-colors disabled:opacity-50"
           >
             {loading ? (
               <><i className="fas fa-circle-notch fa-spin mr-2" />Bezig...</>
@@ -296,7 +296,7 @@ const ProjectForm: React.FC<{ onPublished: () => void }> = ({ onPublished }) => 
         <button
           onClick={handleRewrite}
           disabled={isRewriting || !form.linkedinText.trim()}
-          className="self-start bg-[#e09d37] text-black px-6 py-3 rounded-lg font-black uppercase tracking-widest text-[10px] hover:bg-white transition-colors disabled:opacity-40 flex items-center gap-2"
+          className="cta self-start bg-[#e09d37] text-black px-6 py-3 font-black text-[10px] hover:bg-white transition-colors disabled:opacity-40 flex items-center gap-2"
         >
           {isRewriting ? (
             <><i className="fas fa-circle-notch fa-spin" /> Herschrijven...</>
@@ -462,7 +462,7 @@ const ProjectForm: React.FC<{ onPublished: () => void }> = ({ onPublished }) => 
       <button
         onClick={handlePublish}
         disabled={isPublishing}
-        className="bg-[#e09d37] text-black py-4 rounded-xl font-black uppercase tracking-widest text-[11px] hover:bg-white transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+        className="cta bg-[#e09d37] text-black py-4 font-black text-[11px] hover:bg-white transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
       >
         {isPublishing ? (
           <><i className="fas fa-circle-notch fa-spin" /> Publiceren...</>
@@ -505,7 +505,7 @@ const Dashboard: React.FC = () => {
         <div className="flex items-center gap-3">
           <span className="text-[#e09d37] font-black uppercase tracking-[0.3em] text-[11px]">Admin</span>
           <span className="text-white/20">·</span>
-          <span className="text-gray-500 text-sm">Van der Wal Bouw & Onderhoud</span>
+          <span className="text-gray-500 text-sm">Van der Wal Bouw en Onderhoud</span>
         </div>
         <div className="flex items-center gap-5">
           <Link

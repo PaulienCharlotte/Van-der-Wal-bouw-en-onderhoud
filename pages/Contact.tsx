@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
                 <form name="contact-aanvraag" onSubmit={handleSubmit} className="space-y-6">
                   <input type="hidden" name="form-name" value="contact-aanvraag" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="naam" required placeholder="Uw Naam" value={formState.name} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 font-medium" />
+                    <input type="text" name="naam" required placeholder="Uw naam" value={formState.name} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 font-medium" />
                     <input type="email" name="email" required placeholder="E-mail" value={formState.email} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 font-medium" />
                   </div>
                   <textarea name="bericht" required rows={6} placeholder="Uw bericht..." value={formState.message} onChange={handleChange} className="w-full p-5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#e09d37] text-gray-900 placeholder-gray-400 resize-none font-normal"></textarea>
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
                     <a href="/privacyverklaring.html" className="font-bold text-gray-900 underline decoration-[#e09d37] underline-offset-4">privacyverklaring</a>.
                   </p>
                   {error && <p className="text-red-600 text-sm">{error}</p>}
-                  <button type="submit" disabled={sending} className="w-full md:w-auto bg-[#e09d37] text-black px-12 py-5 rounded-sm font-black uppercase tracking-widest text-[11px] hover:bg-black hover:text-[#e09d37] transition-all shadow-lg disabled:opacity-60">
+                  <button type="submit" disabled={sending} className="cta w-full md:w-auto bg-[#e09d37] text-black px-12 py-5 font-black text-[11px] hover:bg-black hover:text-[#e09d37] transition-all shadow-lg disabled:opacity-60">
                     {sending ? 'Verzenden...' : 'Verzenden'}
                   </button>
                 </form>

@@ -91,9 +91,9 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
 
           <Link
             to="/offerte"
-            className="inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[11px] hover:text-[#e09d37] transition-all group/link mt-2 w-fit"
+            className="action-link inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[11px] hover:text-[#e09d37] transition-all group/link mt-2 w-fit"
           >
-            Vraag een offerte aan
+            Kozijnofferte
             <i className="fas fa-arrow-right transform group-hover/link:translate-x-2 transition-transform" />
           </Link>
         </div>

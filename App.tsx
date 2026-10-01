@@ -40,7 +40,7 @@ const Header: React.FC = () => {
   const isSolidHeader = isScrolled || location.pathname === '/offerte';
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'Over Ons', path: '/over-ons' },
+    { label: 'Over ons', path: '/over-ons' },
     { label: 'Diensten', path: '/diensten' },
     { label: 'Contact', path: '/contact' }
   ];
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
               <a href="/garageboxen-verhuur.html" className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#e09d37] transition-all duration-300 hover:text-white">
                 Garageboxen
               </a>
-              <Link to="/offerte" className="bg-[#e09d37] text-black px-7 py-3 rounded-sm text-[11px] font-black uppercase tracking-widest hover:bg-black hover:text-[#e09d37] transition-all shadow-lg">
+              <Link to="/offerte" className="cta bg-[#e09d37] text-black px-7 py-3 hover:bg-black hover:text-[#e09d37] transition-all shadow-lg">
                 Kozijnofferte
               </Link>
             </nav>
@@ -129,11 +129,10 @@ const Footer: React.FC = () => (
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-10 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 md:flex-row md:text-left">
-        <p>&copy; {new Date().getFullYear()} Van der Wal Bouw & Onderhoud.</p>
+        <p className="brand-name">&copy; {new Date().getFullYear()} Van der Wal Bouw en Onderhoud.</p>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 md:justify-end">
-          <a href="/garageboxen-verhuur.html" className="hover:text-white transition-colors">Garageboxen</a>
           <a href="/privacyverklaring.html" className="hover:text-white transition-colors">Privacyverklaring</a>
-          <a href="/algemene-voorwaarden.html" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
+          <a href="/algemene-voorwaarden.html" className="hover:text-white transition-colors">Algemene voorwaarden</a>
         </div>
       </div>
     </div>

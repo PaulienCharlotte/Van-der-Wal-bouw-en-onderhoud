@@ -26,11 +26,11 @@ const Home: React.FC = () => {
               Van vloeibare zandcementvloeren en schuimbeton tot volledige dakrenovaties en aanbouw. Jasper van der Wal combineert moderne visie met ouderwets vakmanschap.
             </p>
             <div className="flex flex-wrap gap-6">
-              <Link to="/contact" className="bg-[#e09d37] text-black px-8 py-5 rounded-md text-[11px] font-black uppercase tracking-normal hover:bg-white transition-all shadow-2xl">
+              <Link to="/contact" className="cta bg-[#e09d37] text-black px-8 py-5 text-[11px] font-black hover:bg-white transition-all shadow-2xl">
                 Bespreek uw project
               </Link>
-              <Link to="/diensten" className="bg-black/40 border border-white/20 text-white px-12 py-5 rounded-md text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
-                Onze Expertise
+              <Link to="/diensten" className="cta bg-black/40 border border-white/20 text-white px-12 py-5 text-[11px] font-black hover:bg-white hover:text-black transition-all">
+                Onze expertise
               </Link>
             </div>
           </div>
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
 
                   <div className="flex items-center gap-4 relative z-10 mt-8">
                     <div className="w-10 h-1 bg-[#e09d37] rounded-full"></div>
-                    <span className="text-[10px] font-black text-[#e09d37] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">Bekijk Dienst</span>
+                    <span className="text-[10px] font-black text-[#e09d37] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">Bekijk dienst</span>
                   </div>
                 </Link>
               </div>
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
             <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-[700px]">
               <img
                 src="/homepage-dienstverlening.png"
-                alt="Van der Wal aan het werk"
+                alt="Van der Wal Bouw en Onderhoud aan het werk"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0d0d0d]/10 to-[#0d0d0d] hidden lg:block"></div>
@@ -100,8 +100,8 @@ const Home: React.FC = () => {
                 Geen klus is te groot. Of het nu gaat om het strippen van een dak tot het dakbeschot of het voorbereiden van elektra in een nieuwe aanbouw; wij regelen dat alles klopt tot in de kleinste details. Vakmanschap met oog voor de mens achter het huis.
               </p>
               <div>
-                <Link to="/diensten" className="inline-flex items-center gap-4 text-[13px] font-black text-white uppercase tracking-[0.25em] border-b-2 border-[#e09d37] pb-4 hover:text-[#e09d37] transition-all group">
-                  ONTDEK ONZE DIENSTEN <i className="fas fa-arrow-right transform group-hover:translate-x-3 transition-transform"></i>
+                <Link to="/diensten" className="action-link inline-flex items-center gap-4 text-[13px] font-black text-white uppercase tracking-[0.25em] border-b-2 border-[#e09d37] pb-4 hover:text-[#e09d37] transition-all group">
+                  Ontdek onze diensten <i className="fas fa-arrow-right transform group-hover:translate-x-3 transition-transform"></i>
                 </Link>
               </div>
             </div>
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
       <section className="py-48 bg-gradient-to-b from-[#0a0a0a] to-[#050505] text-center border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-4xl md:text-8xl lg:text-9xl font-extrabold text-white tracking-tighter uppercase mb-16 leading-none text-shadow-lg">UW PROJECT, <br /><span className="text-[#e09d37]">ONZE</span> ZORG.</h2>
-          <Link to="/contact" className="inline-block w-full max-w-sm rounded-md bg-[#e09d37] px-6 py-6 text-[12px] font-black uppercase tracking-normal text-black shadow-2xl transition-all hover:bg-white sm:w-auto sm:max-w-none sm:px-16 sm:py-8 sm:text-[13px]">
+          <Link to="/contact" className="cta inline-block w-full max-w-sm bg-[#e09d37] px-6 py-6 text-[12px] font-black text-black shadow-2xl transition-all hover:bg-white sm:w-auto sm:max-w-none sm:px-16 sm:py-8 sm:text-[13px]">
             Bespreek uw project
           </Link>
         </div>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
   return (
@@ -10,9 +11,9 @@ const About: React.FC = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#111] opacity-50 skew-x-[-20deg] translate-x-1/4"></div>
 
         <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10 text-center">
-          <span className="text-[#b88e4b] font-black uppercase tracking-[0.4em] text-[10px] sm:text-xs mb-6 block animate-fadeIn">Van der Wal Bouw</span>
+          <span className="brand-name text-[#b88e4b] font-black uppercase tracking-[0.4em] text-[10px] sm:text-xs mb-6 block animate-fadeIn">Van der Wal Bouw en Onderhoud</span>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-none animate-slideUp">
-            Over Ons
+            Over ons
           </h1>
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed animate-slideUp" style={{ animationDelay: '0.1s' }}>
             Vakmanschap, heldere communicatie en passie voor het echte bouwwerk.
@@ -25,25 +26,35 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
 
-            {/* Linkerkant: Tekst & Quote */}
+            {/* Introductie en aanvragen */}
             <div className="space-y-20 animate-slideUp">
-              <div className="space-y-12">
-                <div className="max-w-xl">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-tighter uppercase text-gray-900">
-                    PASSIE VOOR RUWBOUW
-                  </h2>
-                  <p className="text-gray-500 leading-relaxed text-lg font-normal">
-                    Wat begon als een passie voor timmerwerk is uitgegroeid tot een all-round bouwbedrijf. Bij Jasper van der Wal kunt u terecht voor de "grote klussen". Of het nu gaat om het plaatsen van een compleet nieuw dak, het optrekken van een kapschuur of een uitdagende badkamerrenovatie; wij pakken het aan met volle overtuiging.
+              <div className="max-w-xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-normal uppercase text-gray-900">
+                  Renovatie, onderhoud en verbouw
+                </h2>
+                <div className="space-y-6 text-gray-500 leading-relaxed text-lg font-normal">
+                  <p>
+                    Als zelfstandig timmerman richt ik mij op renovatie, onderhoud en verbouw. Met respect voor het karakter van bestaande gebouwen en oog voor detail zorg ik voor een zorgvuldige uitvoering en een nette afwerking.
+                  </p>
+                  <p>
+                    Voor aanvullende werkzaamheden, zoals stucwerk, elektra en installatiewerk, beschik ik over een netwerk van betrouwbare vakmensen. Zo kan ik u helpen de juiste specialist voor uw project te vinden.
+                  </p>
+                  <p>
+                    Ook voor kunststof kozijnen kunt u bij mij terecht: ik kan deze leveren en monteren. En als u tijdens een verbouwing tijdelijk extra opslagruimte nodig heeft, zijn er garageboxen te huur. De garageboxen zijn daarnaast ook beschikbaar voor reguliere verhuur.
+                  </p>
+                  <p>
+                    Zoekt u een betrouwbare vakman voor uw renovatie-, onderhouds- of verbouwproject? Dan sta ik graag voor u klaar.
                   </p>
                 </div>
-
-                <div className="max-w-xl">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-tighter uppercase text-gray-900">
-                    PERSOONLIJK CONTACT
-                  </h2>
-                  <p className="text-gray-500 leading-relaxed text-lg font-normal">
-                    Als eenmanszaak heb ik direct contact met de klant. Geen tussenpersonen, maar korte lijnen. Ik denk mee over de constructie, materialen en de slimste aanpak om binnen budget een topresultaat neer te zetten dat uw verwachtingen overtreft.
-                  </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <Link to="/offerte" className="cta inline-flex min-h-12 items-center justify-center gap-3 bg-[#e09d37] px-5 py-4 text-center text-xs font-bold text-black transition-colors hover:bg-[#111111] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a16a1b]">
+                    Kozijnofferte
+                    <i className="fas fa-arrow-right shrink-0" aria-hidden="true"></i>
+                  </Link>
+                  <a href="/garageboxen-verhuur.html" className="cta inline-flex min-h-12 items-center justify-center gap-3 border border-[#111111] px-5 py-4 text-center text-xs font-bold text-[#111111] transition-colors hover:bg-[#111111] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]">
+                    Bekijk garageboxen
+                    <i className="fas fa-arrow-right shrink-0" aria-hidden="true"></i>
+                  </a>
                 </div>
               </div>
 
@@ -52,20 +63,10 @@ const About: React.FC = () => {
                   Veilig en betrouwbaar
                 </h2>
                 <p className="text-gray-500 leading-relaxed text-lg font-normal">
-                  Jasper beschikt over een VCA-certificaat. Van der Wal Bouw en Onderhoud is aangesloten bij De Geschillencommissie.
+                  Van der Wal Bouw en Onderhoud beschikt over een VCA-certificaat en is aangesloten bij de geschillencommissie.
                 </p>
               </div>
 
-              {/* Quote Block - Krachtig contrast (Matching screenshot) */}
-              <div className="relative">
-                <div className="absolute top-0 left-0 w-full h-full bg-[#e09d37] rounded-[2rem] translate-x-3 translate-y-3 opacity-20"></div>
-                <div className="bg-[#0a0a0a] p-12 md:p-16 rounded-[2rem] border-l-8 border-[#e09d37] shadow-2xl relative overflow-hidden group">
-                  <p className="text-white text-xl sm:text-2xl md:text-3xl font-bold leading-tight tracking-tight italic relative z-10">
-                    "Bouwen is voor mij meer dan alleen een huis neerzetten. Het gaat om het creëren van een plek waar mensen zich thuis voelen, met constructies die de tijd trotseren."
-                  </p>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#e09d37]/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-1000"></div>
-                </div>
-              </div>
             </div>
 
             {/* Rechterkant: De Grid (Matching layout in screenshot) */}

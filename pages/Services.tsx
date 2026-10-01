@@ -20,7 +20,7 @@ const services: Service[] = [
     description: "Plaatsen van nieuwe, hoogwaardig isolerende kunststof kozijnen en deuren. Voor een vernieuwde uitstraling, optimaal wooncomfort en lagere energiekosten.",
     icon: "fa-door-open",
     image: "/kunsttofkozijn-diensten.png",
-    ctaLabel: "Vraag een kozijnofferte aan",
+    ctaLabel: "Kozijnofferte",
     ctaLink: "/offerte",
     ctaGold: true,
     heroTagline: "Kunststof",
@@ -270,10 +270,10 @@ const ServicesHero: React.FC = () => {
             <button
               onClick={prev}
               aria-label="Vorige dienst"
-              className="group flex items-center gap-3 px-5 py-3 rounded-sm border border-white/10 bg-black/40 hover:bg-[#e09d37] hover:text-black hover:border-[#e09d37] transition-all"
+              className="cta group flex items-center gap-3 px-5 py-3 border border-white/10 bg-black/40 hover:bg-[#e09d37] hover:text-black hover:border-[#e09d37] transition-all"
             >
               <i className="fas fa-arrow-left text-[#e09d37] group-hover:text-black transition-colors" />
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white group-hover:text-black transition-colors hidden sm:inline">
+              <span className="text-white group-hover:text-black transition-colors hidden sm:inline">
                 Vorige
               </span>
             </button>
@@ -300,9 +300,9 @@ const ServicesHero: React.FC = () => {
             <button
               onClick={next}
               aria-label="Volgende dienst"
-              className="group flex items-center gap-3 px-5 py-3 rounded-sm border border-white/10 bg-black/40 hover:bg-[#e09d37] hover:text-black hover:border-[#e09d37] transition-all"
+              className="cta group flex items-center gap-3 px-5 py-3 border border-white/10 bg-black/40 hover:bg-[#e09d37] hover:text-black hover:border-[#e09d37] transition-all"
             >
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white group-hover:text-black transition-colors hidden sm:inline">
+              <span className="text-white group-hover:text-black transition-colors hidden sm:inline">
                 Volgende
               </span>
               <i className="fas fa-arrow-right text-[#e09d37] group-hover:text-black transition-colors" />
@@ -326,11 +326,11 @@ const StandardCard: React.FC<{ service: Service }> = ({ service }) => (
       <h3 lang="nl" className="mb-8 max-w-full hyphens-auto text-xl font-black uppercase leading-tight tracking-tight text-[#e09d37] [overflow-wrap:anywhere] xl:text-2xl">{service.title}</h3>
       <p className="text-gray-300 mb-10 flex-grow text-lg leading-relaxed font-normal">{service.description}</p>
       {service.ctaGold ? (
-        <Link to={service.ctaLink} className="inline-flex w-full items-center justify-center gap-3 rounded-sm bg-[#e09d37] px-5 py-3 text-center text-[11px] font-black uppercase tracking-widest text-black shadow-lg transition-all hover:bg-black hover:text-[#e09d37] sm:w-auto sm:justify-start sm:px-7">
+        <Link to={service.ctaLink} className="cta inline-flex w-full items-center justify-center gap-3 bg-[#e09d37] px-5 py-3 text-center text-[11px] font-black text-black shadow-lg transition-all hover:bg-black hover:text-[#e09d37] sm:w-auto sm:justify-start sm:px-7">
           {service.ctaLabel} <i className="fas fa-arrow-right"></i>
         </Link>
       ) : (
-        <Link to={service.ctaLink} className="inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[11px] hover:text-[#e09d37] transition-all group/link">
+        <Link to={service.ctaLink} className="action-link inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[11px] hover:text-[#e09d37] transition-all group/link">
           {service.ctaLabel} <i className="fas fa-arrow-right transform group-hover/link:translate-x-2 transition-transform"></i>
         </Link>
       )}

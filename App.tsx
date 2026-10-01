@@ -9,68 +9,15 @@ import Admin from './pages/Admin';
 import QuoteTool from './pages/QuoteTool';
 import Contact from './pages/Contact';
 
-const LogoMark: React.FC<{ className?: string; color?: string }> = ({ className = 'h-8 w-8', color = '#e09d37' }) => (
-  <svg viewBox="0 0 300 300" fill={color} xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
-    {/* Screwdriver: top-left → bottom-right */}
-    <g transform="rotate(-45, 150, 150)">
-      <ellipse cx="150" cy="32" rx="15" ry="19" />
-      <rect x="135" y="51" width="30" height="52" rx="4" />
-      <rect x="143" y="103" width="14" height="128" />
-      <rect x="135" y="231" width="30" height="11" rx="2" />
-    </g>
-    {/* Hammer: top-right → bottom-left */}
-    <g transform="rotate(45, 150, 150)">
-      <rect x="108" y="16" width="84" height="44" rx="5" />
-      <rect x="143" y="60" width="14" height="218" />
-      <rect x="135" y="278" width="30" height="13" rx="3" />
-    </g>
-  </svg>
+const Logo: React.FC<{ className?: string }> = ({ className = 'h-auto w-[150px] sm:w-[170px]' }) => (
+  <img
+    src="/logo.svg"
+    width="1188"
+    height="782"
+    alt="Van der Wal Bouw en Onderhoud"
+    className={`block shrink-0 ${className}`}
+  />
 );
-
-const LogoFull: React.FC<{ className?: string; color?: string }> = ({ className = 'h-32 w-32', color = '#e09d37' }) => (
-  <svg viewBox="0 0 500 500" fill={color} xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Van der Wal Bouw en Onderhoud logo">
-    <defs>
-      <clipPath id="logoToolClip">
-        {/* Tools only visible above and below the text band */}
-        <rect x="0" y="0" width="500" height="172" />
-        <rect x="0" y="328" width="500" height="172" />
-      </clipPath>
-    </defs>
-    {/* Crossed tools — clipped to sit behind text band */}
-    <g clipPath="url(#logoToolClip)">
-      <g transform="rotate(-45, 250, 250)">
-        <ellipse cx="250" cy="55" rx="22" ry="27" />
-        <rect x="230" y="82" width="40" height="68" rx="6" />
-        <rect x="243" y="150" width="14" height="200" />
-        <rect x="233" y="350" width="34" height="14" rx="2" />
-      </g>
-      <g transform="rotate(45, 250, 250)">
-        <rect x="188" y="28" width="124" height="54" rx="6" />
-        <rect x="243" y="82" width="14" height="298" />
-        <rect x="233" y="380" width="34" height="16" rx="4" />
-      </g>
-    </g>
-    {/* Horizontal rules */}
-    <rect x="0" y="172" width="500" height="4" />
-    <rect x="0" y="324" width="500" height="4" />
-    {/* Text */}
-    <text x="250" y="268" textAnchor="middle" fontSize="64" fontWeight="900" fontFamily="inherit">VAN DER WAL</text>
-    <text x="250" y="307" textAnchor="middle" fontSize="20" fontWeight="700" fontFamily="inherit" letterSpacing="4">BOUW EN ONDERHOUD</text>
-  </svg>
-);
-
-const Logo: React.FC<{ isDarkPage: boolean; isScrolled: boolean }> = ({ isDarkPage, isScrolled }) => {
-  const color = isScrolled || isDarkPage ? '#e09d37' : '#c49230';
-  return (
-    <div className="flex items-center gap-2.5">
-      <LogoMark className="h-9 w-9 shrink-0 transition-all duration-300" color={color} />
-      <div className="flex flex-col items-start leading-none tracking-tighter">
-        <span className="text-xl sm:text-2xl font-extrabold transition-colors duration-300" style={{ color }}>VAN DER WAL</span>
-        <span className={`text-[9px] uppercase tracking-[0.25em] font-bold mt-1 transition-colors duration-300 ${isScrolled || isDarkPage ? 'text-gray-400' : 'text-gray-500'}`}>BOUW & ONDERHOUD</span>
-      </div>
-    </div>
-  );
-};
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,7 +30,11 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => setIsMenuOpen(false), [location.pathname]);
+  useEffect(() => {
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setIsScrolled(false);
+  }, [location.pathname]);
 
   const isDarkPage = location.pathname === '/' || location.pathname === '/diensten' || location.pathname === '/over-ons' || location.pathname === '/realisaties';
   const isSolidHeader = isScrolled || location.pathname === '/offerte';
@@ -96,14 +47,14 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isSolidHeader ? 'bg-[#0a0a0a]/95 backdrop-blur-md py-3 border-b border-white/10 shadow-xl' : 'bg-transparent py-6 sm:py-8'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-[100] py-3 transition-all duration-500 ${isSolidHeader ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/10 shadow-xl' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="flex justify-between items-center">
             <Link to="/" className="shrink-0 transition-transform hover:scale-105">
-              <Logo isDarkPage={isDarkPage} isScrolled={isSolidHeader} />
+              <Logo />
             </Link>
 
-            <nav className="hidden lg:flex space-x-10 items-center">
+            <nav className="hidden lg:flex gap-6 xl:gap-10 items-center">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
@@ -120,7 +71,7 @@ const Header: React.FC = () => {
                 Garageboxen
               </a>
               <Link to="/offerte" className="bg-[#e09d37] text-black px-7 py-3 rounded-sm text-[11px] font-black uppercase tracking-widest hover:bg-black hover:text-[#e09d37] transition-all shadow-lg">
-                Offerte
+                Kozijnofferte
               </Link>
             </nav>
 
@@ -137,8 +88,8 @@ const Header: React.FC = () => {
             <i className="fas fa-times"></i>
           </button>
           <nav className="flex min-w-0 flex-col space-y-8">
-            {navItems.concat([{ label: 'Offerte', path: '/offerte' }]).map((item) => (
-              <Link key={item.label} to={item.path} className="max-w-full break-words text-4xl font-extrabold uppercase leading-tight tracking-tighter text-white hover:text-[#e09d37] sm:text-5xl">
+            {navItems.concat([{ label: 'Kozijnofferte', path: '/offerte' }]).map((item) => (
+              <Link key={item.label} to={item.path} className="max-w-full break-words text-3xl font-extrabold uppercase leading-tight tracking-normal text-white hover:text-[#e09d37] sm:text-5xl">
                 {item.label}
               </Link>
             ))}
@@ -157,7 +108,7 @@ const Footer: React.FC = () => (
     <div className="max-w-7xl mx-auto px-6 sm:px-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
         <div className="col-span-1 md:col-span-2">
-          <LogoFull className="h-28 w-28" color="#e09d37" />
+          <Logo className="h-auto w-[260px] max-w-full" />
           <p className="text-gray-400 mt-8 max-w-sm text-sm font-normal leading-relaxed">
             Gespecialiseerd in daken, renovaties en ruwbouw. Wij bouwen met passie en precisie voor een duurzaam resultaat waar u jarenlang van geniet.
           </p>

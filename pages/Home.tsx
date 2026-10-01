@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   return (
     <div className="bg-[#0a0a0a]">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[min(860px,92svh)] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=90&w=2000"
@@ -16,18 +16,18 @@ const Home: React.FC = () => {
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 pt-20">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 pt-40 pb-16">
           <div className="max-w-4xl animate-slideUp">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[140px] font-extrabold text-white mb-10 leading-[0.9] tracking-tighter text-shadow-lg uppercase">
-              BOUWEN AAN <br />
-              <span className="text-[#e09d37]">PERFECTIE</span>
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-extrabold text-white mb-8 leading-[1.05] tracking-normal text-shadow-lg uppercase">
+              Bouwen met <br />
+              <span className="text-[#e09d37]">oog voor detail</span>
             </h1>
             <p className="text-gray-200 text-lg md:text-xl mb-12 max-w-2xl font-medium leading-relaxed text-shadow-sm bg-black/60 p-6 sm:p-8 border-l-4 border-[#e09d37] backdrop-blur-[4px] rounded-r-lg">
               Van vloeibare zandcementvloeren en schuimbeton tot volledige dakrenovaties en aanbouw. Jasper van der Wal combineert moderne visie met ouderwets vakmanschap.
             </p>
             <div className="flex flex-wrap gap-6">
-              <Link to="/offerte" className="bg-[#e09d37] text-black px-12 py-5 rounded-md text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all shadow-2xl">
-                Start Uw Project
+              <Link to="/contact" className="bg-[#e09d37] text-black px-8 py-5 rounded-md text-[11px] font-black uppercase tracking-normal hover:bg-white transition-all shadow-2xl">
+                Bespreek uw project
               </Link>
               <Link to="/diensten" className="bg-black/40 border border-white/20 text-white px-12 py-5 rounded-md text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
                 Onze Expertise
@@ -113,8 +113,8 @@ const Home: React.FC = () => {
       <section className="py-48 bg-gradient-to-b from-[#0a0a0a] to-[#050505] text-center border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-4xl md:text-8xl lg:text-9xl font-extrabold text-white tracking-tighter uppercase mb-16 leading-none text-shadow-lg">UW PROJECT, <br /><span className="text-[#e09d37]">ONZE</span> ZORG.</h2>
-          <Link to="/offerte" className="inline-block w-full max-w-sm rounded-md bg-[#e09d37] px-6 py-6 text-[12px] font-black uppercase tracking-[0.2em] text-black shadow-2xl transition-all hover:bg-white sm:w-auto sm:max-w-none sm:px-16 sm:py-8 sm:text-[13px] sm:tracking-[0.3em]">
-            Start uw aanvraag
+          <Link to="/contact" className="inline-block w-full max-w-sm rounded-md bg-[#e09d37] px-6 py-6 text-[12px] font-black uppercase tracking-normal text-black shadow-2xl transition-all hover:bg-white sm:w-auto sm:max-w-none sm:px-16 sm:py-8 sm:text-[13px]">
+            Bespreek uw project
           </Link>
         </div>
       </section>

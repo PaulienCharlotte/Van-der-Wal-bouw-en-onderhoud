@@ -20,7 +20,7 @@ const services: Service[] = [
     description: "Plaatsen van nieuwe, hoogwaardig isolerende kunststof kozijnen en deuren. Voor een vernieuwde uitstraling, optimaal wooncomfort en lagere energiekosten.",
     icon: "fa-door-open",
     image: "/kunsttofkozijn-diensten.png",
-    ctaLabel: "Vraag offerte aan",
+    ctaLabel: "Vraag een kozijnofferte aan",
     ctaLink: "/offerte",
     ctaGold: true,
     heroTagline: "Kunststof",
@@ -74,6 +74,7 @@ const ServicesHero: React.FC = () => {
   const isEarthquake = current.title === 'Aardbevingsherstel';
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (isEarthquake) return;
     const el = sceneRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -102,7 +103,7 @@ const ServicesHero: React.FC = () => {
     <section
       className="relative bg-gradient-to-br from-[#0a0a0a] via-[#100805] to-[#0a0a0a] border-b border-white/5 mb-24 overflow-hidden"
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setActive(true)}
+      onMouseEnter={() => !isEarthquake && setActive(true)}
       onMouseLeave={handleLeave}
     >
       {/* Achtergrond-grid */}
@@ -119,7 +120,7 @@ const ServicesHero: React.FC = () => {
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         style={{
           background: `radial-gradient(ellipse at ${spot.x}% ${spot.y}%, rgba(224,157,55,0.25) 0%, transparent 50%)`,
-          opacity: active ? 1 : 0.55,
+          opacity: isEarthquake ? 0 : active ? 1 : 0.55,
         }}
       />
 
@@ -150,6 +151,15 @@ const ServicesHero: React.FC = () => {
 
         {/* 3D Carousel scene */}
         <div className="relative">
+          {isEarthquake ? (
+            <div className="relative h-[420px] sm:h-[500px] w-full">
+              <img src={current.image} alt={current.title} className="h-full w-full object-contain pb-16" />
+              <div className="absolute bottom-0 left-0 right-0">
+                <p className="text-sm font-bold text-[#e09d37]">{current.heroTagline}</p>
+                <p className="mt-1 text-sm text-white">{current.heroSubline}</p>
+              </div>
+            </div>
+          ) : (
           <div
             ref={sceneRef}
             className="relative h-[420px] sm:h-[500px] w-full"
@@ -187,23 +197,10 @@ const ServicesHero: React.FC = () => {
                 <img
                   src={current.image}
                   alt={current.title}
-                  className={`w-full h-full ${isEarthquake ? 'object-contain' : 'object-cover rounded-xl'} drop-shadow-[0_40px_60px_rgba(0,0,0,0.85)] ${
-                    isEarthquake ? 'animate-[tremor_5s_ease-in-out_infinite]' : ''
-                  }`}
+                  className="w-full h-full object-cover rounded-xl drop-shadow-[0_40px_60px_rgba(0,0,0,0.85)]"
                   style={{ filter: active ? 'brightness(1.1) contrast(1.05)' : 'brightness(0.95)' }}
                 />
               </div>
-
-              {/* Pulserende scheur — alleen bij Aardbevingsherstel */}
-              {isEarthquake && (
-                <div
-                  className="absolute inset-8 pointer-events-none mix-blend-screen animate-[crack-pulse_2.8s_ease-in-out_infinite]"
-                  style={{
-                    background: 'linear-gradient(115deg, transparent 44%, rgba(255,180,80,0.5) 49%, rgba(255,220,140,0.85) 50%, rgba(255,180,80,0.5) 51%, transparent 56%)',
-                    transform: 'translateZ(85px)',
-                  }}
-                />
-              )}
 
               {/* Spotlight die cursor volgt */}
               <div
@@ -265,6 +262,8 @@ const ServicesHero: React.FC = () => {
               </div>
             </div>
           </div>
+
+          )}
 
           {/* Carousel controls */}
           <div className="flex items-center justify-between mt-8">
@@ -345,17 +344,6 @@ const Services: React.FC = () => {
     const style = document.createElement('style');
     style.id = 'services-3d-styles';
     style.textContent = `
-      @keyframes tremor {
-        0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        20% { transform: translate(-1.5px, 1px) rotate(-0.15deg); }
-        40% { transform: translate(2px, -1px) rotate(0.2deg); }
-        60% { transform: translate(-1px, -1.5px) rotate(-0.1deg); }
-        80% { transform: translate(1.5px, 1.5px) rotate(0.15deg); }
-      }
-      @keyframes crack-pulse {
-        0%, 100% { opacity: 0.3; filter: blur(2px); }
-        50% { opacity: 1; filter: blur(0.5px); }
-      }
       @keyframes fade-in {
         from { opacity: 0; transform: translateY(8px); }
         to { opacity: 1; transform: translateY(0); }

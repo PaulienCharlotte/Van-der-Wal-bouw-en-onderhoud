@@ -47,6 +47,15 @@ const About: React.FC = () => {
                 </div>
               </div>
 
+              <div className="max-w-xl border-l-4 border-[#e09d37] pl-6">
+                <h2 className="mb-4 text-xl font-extrabold uppercase tracking-normal text-gray-900">
+                  Veilig en betrouwbaar
+                </h2>
+                <p className="text-gray-500 leading-relaxed text-lg font-normal">
+                  Jasper beschikt over een VCA-certificaat. Van der Wal Bouw en Onderhoud is aangesloten bij De Geschillencommissie.
+                </p>
+              </div>
+
               {/* Quote Block - Krachtig contrast (Matching screenshot) */}
               <div className="relative">
                 <div className="absolute top-0 left-0 w-full h-full bg-[#e09d37] rounded-[2rem] translate-x-3 translate-y-3 opacity-20"></div>
@@ -60,8 +69,8 @@ const About: React.FC = () => {
             </div>
 
             {/* Rechterkant: De Grid (Matching layout in screenshot) */}
-            <div className="relative animate-slideUp" style={{ animationDelay: '0.2s' }}>
-              <div className="grid grid-cols-2 gap-8 lg:gap-10">
+            <div className="relative min-w-0 animate-slideUp" style={{ animationDelay: '0.2s' }}>
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-6">
                 {/* De lange afbeelding (Silhouette stijl) */}
                 <div className="row-span-2">
                   <img
@@ -73,9 +82,9 @@ const About: React.FC = () => {
 
                 {/* De Stats & Status blocks */}
                 <div className="space-y-8 lg:space-y-10">
-                  <div className="bg-[#e09d37] p-10 md:p-12 rounded-[2.5rem] shadow-xl text-black flex flex-col justify-center min-h-[220px] transition-transform duration-500 hover:-translate-y-2">
+                  <div className="bg-[#e09d37] p-4 sm:p-8 lg:p-6 rounded-[2.5rem] shadow-xl text-black flex flex-col justify-center min-h-[220px] transition-transform duration-500 hover:-translate-y-2">
                     <i className="fas fa-shield-alt text-3xl mb-6"></i>
-                    <p className="font-black text-sm md:text-base uppercase leading-tight tracking-wider">
+                    <p lang="nl" className="font-black text-xs sm:text-sm uppercase leading-tight tracking-normal [overflow-wrap:anywhere]">
                       GEGARANDEERDE <br />KWALITEIT
                     </p>
                   </div>
@@ -89,9 +98,9 @@ const About: React.FC = () => {
                   </div>
 
                   {/* Jaar ervaring block */}
-                  <div className="bg-gray-50 p-10 md:p-12 rounded-[2.5rem] border border-gray-100 flex flex-col justify-center transition-transform duration-500 hover:-translate-y-2">
+                  <div className="bg-gray-50 p-4 sm:p-8 lg:p-6 rounded-[2.5rem] border border-gray-100 flex flex-col justify-center transition-transform duration-500 hover:-translate-y-2">
                     <span className="text-[#e09d37] font-black text-4xl sm:text-5xl md:text-6xl block mb-2 tracking-tighter">10+</span>
-                    <span className="text-gray-400 uppercase font-black text-[11px] tracking-[0.3em]">JAAR ERVARING</span>
+                    <span className="text-gray-400 uppercase font-black text-[11px] tracking-normal">JAAR ERVARING</span>
                   </div>
                 </div>
               </div>

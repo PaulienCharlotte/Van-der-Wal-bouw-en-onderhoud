@@ -19,8 +19,9 @@
     a { color:inherit; }
     .wrap { width:min(1100px,calc(100% - 40px)); margin:auto; }
     .topbar { background:#0a0a0a; color:white; }
-    .topbar .wrap { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .brand { color:var(--gold); font-weight:900; text-decoration:none; text-transform:uppercase; letter-spacing:.03em; }
+    .topbar .wrap { min-height:136px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:block; flex-shrink:0; }
+    .brand img { display:block; width:170px; height:auto; }
     .back { color:#ddd; font-size:.9rem; text-decoration:none; }
     .back:hover { color:var(--gold); }
     header { background:var(--paper); padding:72px 0 64px; border-bottom:1px solid var(--line); }
@@ -58,13 +59,13 @@
     footer { background:#0a0a0a; color:white; padding:32px 0; }
     footer a { color:var(--gold); }
     @media(max-width:700px) { header { padding:52px 0; } .benefits,.cards,.steps { grid-template-columns:1fr 1fr; } }
-    @media(max-width:480px) { .wrap { width:min(100% - 28px,1100px); } .topbar .wrap { align-items:flex-start; flex-direction:column; padding:18px 0; gap:4px; } .benefits,.cards,.steps,form { grid-template-columns:1fr; } .wide { grid-column:auto; } }
+    @media(max-width:480px) { .wrap { width:min(100% - 28px,1100px); } .topbar .wrap { min-height:124px; gap:16px; } .brand img { width:150px; } .back { font-size:.75rem; text-align:right; } .benefits,.cards,.steps,form { grid-template-columns:1fr; } .wide { grid-column:auto; } }
   </style>
 </head>
 <body>
   <nav class="topbar" aria-label="Hoofdnavigatie">
     <div class="wrap">
-      <a class="brand" href="/">Van der Wal Bouw &amp; Onderhoud</a>
+      <a class="brand" href="/"><img src="/logo.svg" width="1188" height="782" alt="Van der Wal Bouw en Onderhoud"></a>
       <a class="back" href="/">Terug naar de hoofdwebsite</a>
     </div>
   </nav>

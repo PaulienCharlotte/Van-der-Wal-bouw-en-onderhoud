@@ -503,12 +503,11 @@ const QuoteTool: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f8fa] px-4 pb-12 pt-24 text-[#111827] sm:pt-28">
+    <div className="min-h-screen bg-[#f7f8fa] px-4 pb-12 pt-40 text-[#111827] sm:pt-44">
       <div className="mx-auto max-w-2xl">
         <div className="mb-6 text-center">
-          <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.45em] text-[#e09d37]">Maatvoering tool</span>
-          <h1 className="text-2xl font-black uppercase leading-tight tracking-tight text-[#111827] sm:text-3xl">
-            Aanvraag kozijnen op maat
+          <h1 lang="nl" className="text-2xl font-black uppercase leading-tight tracking-normal text-[#111827] sm:text-3xl [overflow-wrap:anywhere]">
+            Offerte voor kunststofkozijnen
           </h1>
         </div>
 
